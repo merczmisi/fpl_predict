@@ -1,0 +1,5344 @@
+{
+ "season": "2026-27",
+ "gw": 7,
+ "generated_at": "2026-10-16T13:30:28+00:00",
+ "model_version": "20261009",
+ "players": [
+  {
+   "id": 411,
+   "web_name": "Haaland",
+   "position": "FWD",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 6.7
+  },
+  {
+   "id": 12,
+   "web_name": "Saka",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 5.864
+  },
+  {
+   "id": 426,
+   "web_name": "B.Fernandes",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 5.689
+  },
+  {
+   "id": 124,
+   "web_name": "Groß",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 5.543
+  },
+  {
+   "id": 397,
+   "web_name": "Semenyo",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 4.607
+  },
+  {
+   "id": 68,
+   "web_name": "Tavernier",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 4.545
+  },
+  {
+   "id": 427,
+   "web_name": "Mbeumo",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 4.511
+  },
+  {
+   "id": 399,
+   "web_name": "Cherki",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 4.443
+  },
+  {
+   "id": 79,
+   "web_name": "Evanilson",
+   "position": "FWD",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 4.021
+  },
+  {
+   "id": 13,
+   "web_name": "Rice",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 4.016
+  },
+  {
+   "id": 40,
+   "web_name": "Rogers",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 3.923
+  },
+  {
+   "id": 155,
+   "web_name": "Enzo",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 3.892
+  },
+  {
+   "id": 1,
+   "web_name": "Raya",
+   "position": "GKP",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 3.845
+  },
+  {
+   "id": 428,
+   "web_name": "Cunha",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 3.829
+  },
+  {
+   "id": 403,
+   "web_name": "Sávio",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 3.82
+  },
+  {
+   "id": 4,
+   "web_name": "Gabriel",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 3.814
+  },
+  {
+   "id": 412,
+   "web_name": "Lammens",
+   "position": "GKP",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 3.752
+  },
+  {
+   "id": 112,
+   "web_name": "Van Hecke",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 3.743
+  },
+  {
+   "id": 15,
+   "web_name": "Ødegaard",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 3.715
+  },
+  {
+   "id": 261,
+   "web_name": "Iwobi",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 3.697
+  },
+  {
+   "id": 154,
+   "web_name": "Palmer",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 3.664
+  },
+  {
+   "id": 388,
+   "web_name": "Guéhi",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 3.604
+  },
+  {
+   "id": 61,
+   "web_name": "Truffert",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 3.591
+  },
+  {
+   "id": 542,
+   "web_name": "E.Le Fée",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 3.573
+  },
+  {
+   "id": 250,
+   "web_name": "Leno",
+   "position": "GKP",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 3.568
+  },
+  {
+   "id": 67,
+   "web_name": "Rayan",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 3.498
+  },
+  {
+   "id": 429,
+   "web_name": "Rashford",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 3.471
+  },
+  {
+   "id": 26,
+   "web_name": "Havertz",
+   "position": "FWD",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 3.467
+  },
+  {
+   "id": 391,
+   "web_name": "Gvardiol",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 3.465
+  },
+  {
+   "id": 109,
+   "web_name": "Verbruggen",
+   "position": "GKP",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 3.455
+  },
+  {
+   "id": 60,
+   "web_name": "Hill",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 3.439
+  },
+  {
+   "id": 384,
+   "web_name": "Donnarumma",
+   "position": "GKP",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 3.397
+  },
+  {
+   "id": 496,
+   "web_name": "Kinsky",
+   "position": "GKP",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 3.373
+  },
+  {
+   "id": 368,
+   "web_name": "Szoboszlai",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 3.365
+  },
+  {
+   "id": 268,
+   "web_name": "King",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 3.326
+  },
+  {
+   "id": 115,
+   "web_name": "De Cuyper",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 3.298
+  },
+  {
+   "id": 640,
+   "web_name": "Affengruber",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 3.292
+  },
+  {
+   "id": 502,
+   "web_name": "Robertson",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 3.287
+  },
+  {
+   "id": 569,
+   "web_name": "Gonzalo",
+   "position": "FWD",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 3.264
+  },
+  {
+   "id": 57,
+   "web_name": "Petrović",
+   "position": "GKP",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 3.262
+  },
+  {
+   "id": 379,
+   "web_name": "Isak",
+   "position": "FWD",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 3.223
+  },
+  {
+   "id": 455,
+   "web_name": "Tonali",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 3.19
+  },
+  {
+   "id": 526,
+   "web_name": "Solanke",
+   "position": "FWD",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 3.159
+  },
+  {
+   "id": 94,
+   "web_name": "Schade",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 3.131
+  },
+  {
+   "id": 156,
+   "web_name": "Neto",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 3.125
+  },
+  {
+   "id": 8,
+   "web_name": "Calafiori",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 3.122
+  },
+  {
+   "id": 453,
+   "web_name": "Barnes",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 3.109
+  },
+  {
+   "id": 286,
+   "web_name": "Belloumi",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 3.108
+  },
+  {
+   "id": 555,
+   "web_name": "Silva",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 3.097
+  },
+  {
+   "id": 346,
+   "web_name": "Calvert-Lewin",
+   "position": "FWD",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 3.096
+  },
+  {
+   "id": 597,
+   "web_name": "Suzuki",
+   "position": "GKP",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 3.079
+  },
+  {
+   "id": 31,
+   "web_name": "Konsa",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 3.071
+  },
+  {
+   "id": 632,
+   "web_name": "Andrés",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 3.06
+  },
+  {
+   "id": 138,
+   "web_name": "Kostoulas",
+   "position": "FWD",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 3.044
+  },
+  {
+   "id": 28,
+   "web_name": "Martinez",
+   "position": "GKP",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 3.008
+  },
+  {
+   "id": 127,
+   "web_name": "Gomez",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 3.006
+  },
+  {
+   "id": 264,
+   "web_name": "Bobb",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 2.997
+  },
+  {
+   "id": 45,
+   "web_name": "McGinn",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.987
+  },
+  {
+   "id": 43,
+   "web_name": "Tielemans",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 2.967
+  },
+  {
+   "id": 418,
+   "web_name": "Maguire",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 2.956
+  },
+  {
+   "id": 504,
+   "web_name": "Vuskovic",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 2.946
+  },
+  {
+   "id": 432,
+   "web_name": "Mainoo",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 2.915
+  },
+  {
+   "id": 452,
+   "web_name": "Bruno G.",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 2.91
+  },
+  {
+   "id": 69,
+   "web_name": "Scott",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 2.905
+  },
+  {
+   "id": 165,
+   "web_name": "João Pedro",
+   "position": "FWD",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 2.896
+  },
+  {
+   "id": 525,
+   "web_name": "Fernandes",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.889
+  },
+  {
+   "id": 366,
+   "web_name": "Wirtz",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 2.871
+  },
+  {
+   "id": 53,
+   "web_name": "Manzambi",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.856
+  },
+  {
+   "id": 419,
+   "web_name": "Martinez",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 2.848
+  },
+  {
+   "id": 257,
+   "web_name": "Bassey",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 2.846
+  },
+  {
+   "id": 73,
+   "web_name": "Adams",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 2.834
+  },
+  {
+   "id": 236,
+   "web_name": "Dewsbury-Hall",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 2.808
+  },
+  {
+   "id": 129,
+   "web_name": "Ayari",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 2.799
+  },
+  {
+   "id": 552,
+   "web_name": "Brobbey",
+   "position": "FWD",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 2.787
+  },
+  {
+   "id": 529,
+   "web_name": "Roefs",
+   "position": "GKP",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 2.784
+  },
+  {
+   "id": 113,
+   "web_name": "F.Kadıoğlu",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 2.784
+  },
+  {
+   "id": 367,
+   "web_name": "Gakpo",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 2.782
+  },
+  {
+   "id": 106,
+   "web_name": "Thiago",
+   "position": "FWD",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.778
+  },
+  {
+   "id": 41,
+   "web_name": "Buendía",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.768
+  },
+  {
+   "id": 82,
+   "web_name": "Kelleher",
+   "position": "GKP",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.763
+  },
+  {
+   "id": 389,
+   "web_name": "Matheus N.",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.741
+  },
+  {
+   "id": 480,
+   "web_name": "Gibbs-White",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 2.73
+  },
+  {
+   "id": 571,
+   "web_name": "Tzolakis",
+   "position": "GKP",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.729
+  },
+  {
+   "id": 249,
+   "web_name": "Barry",
+   "position": "FWD",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 2.719
+  },
+  {
+   "id": 356,
+   "web_name": "Virgil",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 2.717
+  },
+  {
+   "id": 401,
+   "web_name": "Marmoush",
+   "position": "FWD",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.71
+  },
+  {
+   "id": 522,
+   "web_name": "Gray",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.701
+  },
+  {
+   "id": 254,
+   "web_name": "Robinson",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 2.696
+  },
+  {
+   "id": 390,
+   "web_name": "Rúben",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.668
+  },
+  {
+   "id": 330,
+   "web_name": "Bogle",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.664
+  },
+  {
+   "id": 98,
+   "web_name": "Janelt",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.661
+  },
+  {
+   "id": 512,
+   "web_name": "Kudus",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.659
+  },
+  {
+   "id": 105,
+   "web_name": "Anthony",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.618
+  },
+  {
+   "id": 237,
+   "web_name": "Ndiaye",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.606
+  },
+  {
+   "id": 350,
+   "web_name": "A.Becker",
+   "position": "GKP",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 2.601
+  },
+  {
+   "id": 335,
+   "web_name": "Stach",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.598
+  },
+  {
+   "id": 449,
+   "web_name": "Hall",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 2.569
+  },
+  {
+   "id": 258,
+   "web_name": "Castagne",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 2.561
+  },
+  {
+   "id": 166,
+   "web_name": "N.Jackson",
+   "position": "FWD",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.519
+  },
+  {
+   "id": 229,
+   "web_name": "Tarkowski",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 2.5
+  },
+  {
+   "id": 481,
+   "web_name": "Anderson",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.494
+  },
+  {
+   "id": 265,
+   "web_name": "Berge",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 2.491
+  },
+  {
+   "id": 544,
+   "web_name": "Xhaka",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 2.471
+  },
+  {
+   "id": 579,
+   "web_name": "Charles",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 2.457
+  },
+  {
+   "id": 362,
+   "web_name": "Jacquet",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 2.442
+  },
+  {
+   "id": 533,
+   "web_name": "Mukiele",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 2.433
+  },
+  {
+   "id": 608,
+   "web_name": "Yalcouyé",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 2.421
+  },
+  {
+   "id": 86,
+   "web_name": "Lewis-Potter",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.406
+  },
+  {
+   "id": 282,
+   "web_name": "Giles",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.382
+  },
+  {
+   "id": 385,
+   "web_name": "Trafford",
+   "position": "GKP",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.374
+  },
+  {
+   "id": 417,
+   "web_name": "Dalot",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 2.37
+  },
+  {
+   "id": 398,
+   "web_name": "Foden",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.367
+  },
+  {
+   "id": 336,
+   "web_name": "Okafor",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.363
+  },
+  {
+   "id": 70,
+   "web_name": "Kluivert",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 2.359
+  },
+  {
+   "id": 415,
+   "web_name": "Dorgu",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 2.359
+  },
+  {
+   "id": 33,
+   "web_name": "Mings",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.348
+  },
+  {
+   "id": 114,
+   "web_name": "Boscagli",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 2.345
+  },
+  {
+   "id": 503,
+   "web_name": "Van de Ven",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.335
+  },
+  {
+   "id": 222,
+   "web_name": "Strand Larsen",
+   "position": "FWD",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 2.324
+  },
+  {
+   "id": 200,
+   "web_name": "Lacroix",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 2.321
+  },
+  {
+   "id": 290,
+   "web_name": "Slater",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.307
+  },
+  {
+   "id": 618,
+   "web_name": "Cho",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.295
+  },
+  {
+   "id": 116,
+   "web_name": "Dunk",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 2.294
+  },
+  {
+   "id": 226,
+   "web_name": "Pickford",
+   "position": "GKP",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 2.29
+  },
+  {
+   "id": 64,
+   "web_name": "Smith",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 2.29
+  },
+  {
+   "id": 47,
+   "web_name": "Kamara",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.267
+  },
+  {
+   "id": 334,
+   "web_name": "Muharemović",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.262
+  },
+  {
+   "id": 37,
+   "web_name": "Lindelöf",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 2.262
+  },
+  {
+   "id": 295,
+   "web_name": "McBurnie",
+   "position": "FWD",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.245
+  },
+  {
+   "id": 400,
+   "web_name": "Doku",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.245
+  },
+  {
+   "id": 588,
+   "web_name": "Khalaili",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 2.228
+  },
+  {
+   "id": 332,
+   "web_name": "Justin",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.219
+  },
+  {
+   "id": 338,
+   "web_name": "Ampadu",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 2.216
+  },
+  {
+   "id": 183,
+   "web_name": "Rudoni",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 2.204
+  },
+  {
+   "id": 93,
+   "web_name": "Schuster",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.203
+  },
+  {
+   "id": 176,
+   "web_name": "Dasilva",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 2.186
+  },
+  {
+   "id": 87,
+   "web_name": "Ajer",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.176
+  },
+  {
+   "id": 580,
+   "web_name": "Araujo",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 2.171
+  },
+  {
+   "id": 460,
+   "web_name": "Willock",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 2.151
+  },
+  {
+   "id": 149,
+   "web_name": "Colwill",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 2.125
+  },
+  {
+   "id": 204,
+   "web_name": "Mitchell",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 2.098
+  },
+  {
+   "id": 464,
+   "web_name": "Wissa",
+   "position": "FWD",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 2.086
+  },
+  {
+   "id": 519,
+   "web_name": "Gallagher",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.082
+  },
+  {
+   "id": 516,
+   "web_name": "Bentancur",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.079
+  },
+  {
+   "id": 467,
+   "web_name": "Sels",
+   "position": "GKP",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 2.072
+  },
+  {
+   "id": 280,
+   "web_name": "Coyle",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.048
+  },
+  {
+   "id": 201,
+   "web_name": "Muñoz",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 2.032
+  },
+  {
+   "id": 387,
+   "web_name": "O'Reilly",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 2.025
+  },
+  {
+   "id": 102,
+   "web_name": "Yarmoliuk",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 2.022
+  },
+  {
+   "id": 515,
+   "web_name": "Maddison",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 2.021
+  },
+  {
+   "id": 586,
+   "web_name": "Mendy",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 2.017
+  },
+  {
+   "id": 545,
+   "web_name": "Sadiki",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 2.015
+  },
+  {
+   "id": 635,
+   "web_name": "Timber",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.993
+  },
+  {
+   "id": 423,
+   "web_name": "Shaw",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 1.992
+  },
+  {
+   "id": 209,
+   "web_name": "Johnson",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.991
+  },
+  {
+   "id": 214,
+   "web_name": "Kamada",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.982
+  },
+  {
+   "id": 14,
+   "web_name": "Eze",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.98
+  },
+  {
+   "id": 372,
+   "web_name": "Mac Allister",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 1.97
+  },
+  {
+   "id": 445,
+   "web_name": "Thiaw",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.948
+  },
+  {
+   "id": 75,
+   "web_name": "Christie",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 1.924
+  },
+  {
+   "id": 136,
+   "web_name": "Welbeck",
+   "position": "FWD",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.924
+  },
+  {
+   "id": 210,
+   "web_name": "Wharton",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.914
+  },
+  {
+   "id": 556,
+   "web_name": "M.Sangaré",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.902
+  },
+  {
+   "id": 233,
+   "web_name": "Mykolenko",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.893
+  },
+  {
+   "id": 316,
+   "web_name": "Emersonn",
+   "position": "FWD",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.878
+  },
+  {
+   "id": 279,
+   "web_name": "Ajayi",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 1.877
+  },
+  {
+   "id": 377,
+   "web_name": "Munoz",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 1.877
+  },
+  {
+   "id": 25,
+   "web_name": "Gyökeres",
+   "position": "FWD",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.867
+  },
+  {
+   "id": 96,
+   "web_name": "Damsgaard",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.855
+  },
+  {
+   "id": 10,
+   "web_name": "White",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.855
+  },
+  {
+   "id": 566,
+   "web_name": "Horníček",
+   "position": "GKP",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.838
+  },
+  {
+   "id": 514,
+   "web_name": "Tel",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 1.831
+  },
+  {
+   "id": 472,
+   "web_name": "Murillo",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.822
+  },
+  {
+   "id": 277,
+   "web_name": "Egan",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 1.82
+  },
+  {
+   "id": 599,
+   "web_name": "Elvedi",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.818
+  },
+  {
+   "id": 239,
+   "web_name": "Garner",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.814
+  },
+  {
+   "id": 331,
+   "web_name": "Gudmundsson",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.809
+  },
+  {
+   "id": 101,
+   "web_name": "Henderson",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.803
+  },
+  {
+   "id": 345,
+   "web_name": "Tanaka",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.801
+  },
+  {
+   "id": 583,
+   "web_name": "Chavarria",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.793
+  },
+  {
+   "id": 486,
+   "web_name": "McAtee",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.779
+  },
+  {
+   "id": 567,
+   "web_name": "Schlager",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.758
+  },
+  {
+   "id": 238,
+   "web_name": "Grealish",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.757
+  },
+  {
+   "id": 551,
+   "web_name": "N.Angulo",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.756
+  },
+  {
+   "id": 491,
+   "web_name": "Igor Jesus",
+   "position": "FWD",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.75
+  },
+  {
+   "id": 541,
+   "web_name": "Meunier",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.75
+  },
+  {
+   "id": 167,
+   "web_name": "Delap",
+   "position": "FWD",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.743
+  },
+  {
+   "id": 267,
+   "web_name": "Lukić",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.737
+  },
+  {
+   "id": 499,
+   "web_name": "Pedro Porro",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 1.723
+  },
+  {
+   "id": 532,
+   "web_name": "Ballard",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.722
+  },
+  {
+   "id": 230,
+   "web_name": "Branthwaite",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.714
+  },
+  {
+   "id": 173,
+   "web_name": "Thomas",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.71
+  },
+  {
+   "id": 637,
+   "web_name": "Maitland-Niles",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.709
+  },
+  {
+   "id": 591,
+   "web_name": "Enciso",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.7
+  },
+  {
+   "id": 88,
+   "web_name": "Kayode",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.695
+  },
+  {
+   "id": 611,
+   "web_name": "Wan-Bissaka",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.676
+  },
+  {
+   "id": 110,
+   "web_name": "Rushworth",
+   "position": "GKP",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.653
+  },
+  {
+   "id": 447,
+   "web_name": "Botman",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.649
+  },
+  {
+   "id": 54,
+   "web_name": "Gomes",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.647
+  },
+  {
+   "id": 211,
+   "web_name": "Yeremy",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.641
+  },
+  {
+   "id": 628,
+   "web_name": "Barcola",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 1.635
+  },
+  {
+   "id": 646,
+   "web_name": "Flemming",
+   "position": "FWD",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.63
+  },
+  {
+   "id": 469,
+   "web_name": "N.Williams",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.624
+  },
+  {
+   "id": 91,
+   "web_name": "Pinnock",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.619
+  },
+  {
+   "id": 619,
+   "web_name": "Palacios",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.595
+  },
+  {
+   "id": 501,
+   "web_name": "Danso",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.595
+  },
+  {
+   "id": 202,
+   "web_name": "Richards",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.581
+  },
+  {
+   "id": 328,
+   "web_name": "Struijk",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 1.578
+  },
+  {
+   "id": 305,
+   "web_name": "Davis",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.572
+  },
+  {
+   "id": 570,
+   "web_name": "Palacios",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 1.561
+  },
+  {
+   "id": 459,
+   "web_name": "L.Miley",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.556
+  },
+  {
+   "id": 244,
+   "web_name": "Armstrong",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.545
+  },
+  {
+   "id": 186,
+   "web_name": "Mason-Clark",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.542
+  },
+  {
+   "id": 194,
+   "web_name": "Thomas-Asante",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.541
+  },
+  {
+   "id": 95,
+   "web_name": "O.Dango",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.536
+  },
+  {
+   "id": 457,
+   "web_name": "J.Murphy",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.533
+  },
+  {
+   "id": 17,
+   "web_name": "Merino",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.533
+  },
+  {
+   "id": 534,
+   "web_name": "Hume",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.527
+  },
+  {
+   "id": 553,
+   "web_name": "Isidor",
+   "position": "FWD",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.524
+  },
+  {
+   "id": 439,
+   "web_name": "Šeško",
+   "position": "FWD",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 1.522
+  },
+  {
+   "id": 483,
+   "web_name": "Ndoye",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.519
+  },
+  {
+   "id": 461,
+   "web_name": "Touré",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.518
+  },
+  {
+   "id": 358,
+   "web_name": "Kerkez",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 1.516
+  },
+  {
+   "id": 650,
+   "web_name": "Fofana",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.514
+  },
+  {
+   "id": 585,
+   "web_name": "Herrington",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 1.496
+  },
+  {
+   "id": 184,
+   "web_name": "Grimes",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.489
+  },
+  {
+   "id": 199,
+   "web_name": "Benitez",
+   "position": "GKP",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.483
+  },
+  {
+   "id": 256,
+   "web_name": "Tete",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 1.454
+  },
+  {
+   "id": 462,
+   "web_name": "Steur",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.452
+  },
+  {
+   "id": 313,
+   "web_name": "Clarke",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.449
+  },
+  {
+   "id": 145,
+   "web_name": "Fofana",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.432
+  },
+  {
+   "id": 592,
+   "web_name": "Ouattara",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.417
+  },
+  {
+   "id": 337,
+   "web_name": "Aaronson",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.411
+  },
+  {
+   "id": 498,
+   "web_name": "Senesi",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 1.401
+  },
+  {
+   "id": 104,
+   "web_name": "Onyeka",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.397
+  },
+  {
+   "id": 347,
+   "web_name": "Nmecha",
+   "position": "FWD",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.391
+  },
+  {
+   "id": 520,
+   "web_name": "Bergvall",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 1.391
+  },
+  {
+   "id": 620,
+   "web_name": "Diouf",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.388
+  },
+  {
+   "id": 32,
+   "web_name": "Cash",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.368
+  },
+  {
+   "id": 19,
+   "web_name": "Zubimendi",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.363
+  },
+  {
+   "id": 554,
+   "web_name": "Tzolis",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.348
+  },
+  {
+   "id": 5,
+   "web_name": "J.Timber",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.329
+  },
+  {
+   "id": 371,
+   "web_name": "Gravenberch",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 1.328
+  },
+  {
+   "id": 490,
+   "web_name": "Wood",
+   "position": "FWD",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.324
+  },
+  {
+   "id": 260,
+   "web_name": "Wilson",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.314
+  },
+  {
+   "id": 644,
+   "web_name": "Thomas",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 1.31
+  },
+  {
+   "id": 125,
+   "web_name": "Georginio",
+   "position": "FWD",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 1.307
+  },
+  {
+   "id": 492,
+   "web_name": "Awoniyi",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.306
+  },
+  {
+   "id": 563,
+   "web_name": "Maeda",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.299
+  },
+  {
+   "id": 574,
+   "web_name": "Yirenkyi",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.298
+  },
+  {
+   "id": 16,
+   "web_name": "Madueke",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.289
+  },
+  {
+   "id": 572,
+   "web_name": "Florentino",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.279
+  },
+  {
+   "id": 315,
+   "web_name": "Fatawu",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.274
+  },
+  {
+   "id": 536,
+   "web_name": "Reinildo",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 1.262
+  },
+  {
+   "id": 581,
+   "web_name": "Diomande",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.256
+  },
+  {
+   "id": 259,
+   "web_name": "Diop",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.252
+  },
+  {
+   "id": 596,
+   "web_name": "Ruggeri",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.246
+  },
+  {
+   "id": 304,
+   "web_name": "O'Shea",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.237
+  },
+  {
+   "id": 7,
+   "web_name": "Lewis-Skelly",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 1.236
+  },
+  {
+   "id": 142,
+   "web_name": "James",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.235
+  },
+  {
+   "id": 203,
+   "web_name": "Canvot",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.224
+  },
+  {
+   "id": 144,
+   "web_name": "Gusto",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.218
+  },
+  {
+   "id": 300,
+   "web_name": "Walton",
+   "position": "GKP",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.203
+  },
+  {
+   "id": 52,
+   "web_name": "Alysson",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.201
+  },
+  {
+   "id": 271,
+   "web_name": "Muniz",
+   "position": "FWD",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 1.195
+  },
+  {
+   "id": 263,
+   "web_name": "Kevin",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 1.192
+  },
+  {
+   "id": 430,
+   "web_name": "Mount",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 1.188
+  },
+  {
+   "id": 575,
+   "web_name": "Tomiyasu",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.166
+  },
+  {
+   "id": 440,
+   "web_name": "Zirkzee",
+   "position": "FWD",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 1.165
+  },
+  {
+   "id": 446,
+   "web_name": "Schär",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.165
+  },
+  {
+   "id": 213,
+   "web_name": "Lerma",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.163
+  },
+  {
+   "id": 289,
+   "web_name": "Crooks",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 1.16
+  },
+  {
+   "id": 100,
+   "web_name": "Carvalho",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.135
+  },
+  {
+   "id": 71,
+   "web_name": "Cook",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 1.128
+  },
+  {
+   "id": 649,
+   "web_name": "Fernandez-Pardo",
+   "position": "FWD",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.126
+  },
+  {
+   "id": 320,
+   "web_name": "Akpom",
+   "position": "FWD",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.125
+  },
+  {
+   "id": 262,
+   "web_name": "Smith Rowe",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 1.124
+  },
+  {
+   "id": 46,
+   "web_name": "Barkley",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.122
+  },
+  {
+   "id": 269,
+   "web_name": "Sessegnon",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 1.117
+  },
+  {
+   "id": 318,
+   "web_name": "Philogene",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 1.112
+  },
+  {
+   "id": 242,
+   "web_name": "George",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.112
+  },
+  {
+   "id": 190,
+   "web_name": "Tchaouna",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 1.106
+  },
+  {
+   "id": 595,
+   "web_name": "Dedić",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.096
+  },
+  {
+   "id": 633,
+   "web_name": "Ahanor",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.076
+  },
+  {
+   "id": 247,
+   "web_name": "Hackney",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.074
+  },
+  {
+   "id": 473,
+   "web_name": "Aina",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 1.067
+  },
+  {
+   "id": 506,
+   "web_name": "Udogie",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 1.058
+  },
+  {
+   "id": 343,
+   "web_name": "James",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 1.056
+  },
+  {
+   "id": 90,
+   "web_name": "Hickey",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 1.053
+  },
+  {
+   "id": 34,
+   "web_name": "Pau",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.05
+  },
+  {
+   "id": 357,
+   "web_name": "Frimpong",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 1.048
+  },
+  {
+   "id": 157,
+   "web_name": "Estêvão",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 1.048
+  },
+  {
+   "id": 74,
+   "web_name": "Brooks",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 1.047
+  },
+  {
+   "id": 450,
+   "web_name": "Livramento",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 1.041
+  },
+  {
+   "id": 36,
+   "web_name": "Maatsen",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.036
+  },
+  {
+   "id": 245,
+   "web_name": "Dibling",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.033
+  },
+  {
+   "id": 131,
+   "web_name": "Baleba",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 1.031
+  },
+  {
+   "id": 208,
+   "web_name": "Sarr",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 1.029
+  },
+  {
+   "id": 631,
+   "web_name": "Mbaye",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 1.005
+  },
+  {
+   "id": 232,
+   "web_name": "O'Brien",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 1.001
+  },
+  {
+   "id": 147,
+   "web_name": "Tosin",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.995
+  },
+  {
+   "id": 253,
+   "web_name": "Andersen",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.992
+  },
+  {
+   "id": 151,
+   "web_name": "Acheampong",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.992
+  },
+  {
+   "id": 568,
+   "web_name": "Barco",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.991
+  },
+  {
+   "id": 656,
+   "web_name": "Mfuni",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.991
+  },
+  {
+   "id": 634,
+   "web_name": "Chilwell",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.983
+  },
+  {
+   "id": 613,
+   "web_name": "Hadjam",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.977
+  },
+  {
+   "id": 119,
+   "web_name": "Costinha",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.976
+  },
+  {
+   "id": 161,
+   "web_name": "Lavia",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.945
+  },
+  {
+   "id": 97,
+   "web_name": "Jensen",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.936
+  },
+  {
+   "id": 431,
+   "web_name": "Amad",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.915
+  },
+  {
+   "id": 527,
+   "web_name": "Richarlison",
+   "position": "FWD",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.91
+  },
+  {
+   "id": 638,
+   "web_name": "Larsson",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.907
+  },
+  {
+   "id": 72,
+   "web_name": "Gannon-Doak",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.895
+  },
+  {
+   "id": 175,
+   "web_name": "van Ewijk",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.895
+  },
+  {
+   "id": 240,
+   "web_name": "Iroegbunam",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.874
+  },
+  {
+   "id": 612,
+   "web_name": "Methalie",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.87
+  },
+  {
+   "id": 153,
+   "web_name": "Disasi",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.848
+  },
+  {
+   "id": 564,
+   "web_name": "Scherpen",
+   "position": "GKP",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.837
+  },
+  {
+   "id": 420,
+   "web_name": "Yoro",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.834
+  },
+  {
+   "id": 126,
+   "web_name": "O'Riley",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.829
+  },
+  {
+   "id": 108,
+   "web_name": "Wilson",
+   "position": "FWD",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.821
+  },
+  {
+   "id": 577,
+   "web_name": "Stroud",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.818
+  },
+  {
+   "id": 212,
+   "web_name": "Hughes",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.812
+  },
+  {
+   "id": 589,
+   "web_name": "Gourna-Douath",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.811
+  },
+  {
+   "id": 55,
+   "web_name": "Watkins",
+   "position": "FWD",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.809
+  },
+  {
+   "id": 159,
+   "web_name": "Caicedo",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.807
+  },
+  {
+   "id": 405,
+   "web_name": "N.Gonzalez",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.796
+  },
+  {
+   "id": 369,
+   "web_name": "Ngumoha",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.795
+  },
+  {
+   "id": 51,
+   "web_name": "George Hemmings",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.795
+  },
+  {
+   "id": 488,
+   "web_name": "I.Sangaré",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.793
+  },
+  {
+   "id": 182,
+   "web_name": "Amenda",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.79
+  },
+  {
+   "id": 364,
+   "web_name": "Tsimikas",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.771
+  },
+  {
+   "id": 327,
+   "web_name": "Bijol",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.765
+  },
+  {
+   "id": 642,
+   "web_name": "Vaz",
+   "position": "FWD",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.761
+  },
+  {
+   "id": 9,
+   "web_name": "Hincapie",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.76
+  },
+  {
+   "id": 607,
+   "web_name": "Jebbison",
+   "position": "FWD",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.758
+  },
+  {
+   "id": 600,
+   "web_name": "Osman",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.75
+  },
+  {
+   "id": 56,
+   "web_name": "Abraham",
+   "position": "FWD",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.737
+  },
+  {
+   "id": 474,
+   "web_name": "Jair Cunha",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.731
+  },
+  {
+   "id": 148,
+   "web_name": "Hato",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.722
+  },
+  {
+   "id": 20,
+   "web_name": "Dowman",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.716
+  },
+  {
+   "id": 306,
+   "web_name": "Greaves",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.712
+  },
+  {
+   "id": 375,
+   "web_name": "Nyoni",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.711
+  },
+  {
+   "id": 465,
+   "web_name": "Osula",
+   "position": "FWD",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.709
+  },
+  {
+   "id": 393,
+   "web_name": "Khusanov",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.704
+  },
+  {
+   "id": 123,
+   "web_name": "Hinshelwood",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.704
+  },
+  {
+   "id": 565,
+   "web_name": "Bamba",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.69
+  },
+  {
+   "id": 224,
+   "web_name": "Nketiah",
+   "position": "FWD",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.653
+  },
+  {
+   "id": 463,
+   "web_name": "Woltemade",
+   "position": "FWD",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.643
+  },
+  {
+   "id": 647,
+   "web_name": "Bard",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.642
+  },
+  {
+   "id": 287,
+   "web_name": "Millar",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.642
+  },
+  {
+   "id": 164,
+   "web_name": "Quenda",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.633
+  },
+  {
+   "id": 381,
+   "web_name": "Koumas",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.628
+  },
+  {
+   "id": 195,
+   "web_name": "Simms",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.627
+  },
+  {
+   "id": 78,
+   "web_name": "Kroupi.Jr",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.624
+  },
+  {
+   "id": 246,
+   "web_name": "Röhl",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.619
+  },
+  {
+   "id": 340,
+   "web_name": "Gelhardt",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.617
+  },
+  {
+   "id": 643,
+   "web_name": "Norton-Cuffy",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.612
+  },
+  {
+   "id": 454,
+   "web_name": "Elanga",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.612
+  },
+  {
+   "id": 11,
+   "web_name": "Mosquera",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.611
+  },
+  {
+   "id": 6,
+   "web_name": "Saliba",
+   "position": "DEF",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.609
+  },
+  {
+   "id": 478,
+   "web_name": "Netz",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.608
+  },
+  {
+   "id": 456,
+   "web_name": "J.Ramsey",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.603
+  },
+  {
+   "id": 422,
+   "web_name": "Mazraoui",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.6
+  },
+  {
+   "id": 248,
+   "web_name": "Beto",
+   "position": "FWD",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.59
+  },
+  {
+   "id": 471,
+   "web_name": "Milenković",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.584
+  },
+  {
+   "id": 84,
+   "web_name": "Collins",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.582
+  },
+  {
+   "id": 584,
+   "web_name": "Hamer",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.568
+  },
+  {
+   "id": 27,
+   "web_name": "G.Jesus",
+   "position": "FWD",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.551
+  },
+  {
+   "id": 81,
+   "web_name": "Rodríguez",
+   "position": "FWD",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.542
+  },
+  {
+   "id": 339,
+   "web_name": "Longstaff",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.54
+  },
+  {
+   "id": 179,
+   "web_name": "Latibeaudiere",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.532
+  },
+  {
+   "id": 662,
+   "web_name": "Nicoll-Jazuli",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.531
+  },
+  {
+   "id": 122,
+   "web_name": "Minteh",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.516
+  },
+  {
+   "id": 406,
+   "web_name": "Kovačić",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.509
+  },
+  {
+   "id": 573,
+   "web_name": "Sanchez",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.508
+  },
+  {
+   "id": 223,
+   "web_name": "Mateta",
+   "position": "FWD",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.507
+  },
+  {
+   "id": 162,
+   "web_name": "Andrey Santos",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.506
+  },
+  {
+   "id": 598,
+   "web_name": "Cherif",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.482
+  },
+  {
+   "id": 402,
+   "web_name": "Rodrigo",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.472
+  },
+  {
+   "id": 76,
+   "web_name": "Tóth.A",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.463
+  },
+  {
+   "id": 323,
+   "web_name": "McAteer",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.462
+  },
+  {
+   "id": 543,
+   "web_name": "Diarra",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.462
+  },
+  {
+   "id": 421,
+   "web_name": "Heaven",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.461
+  },
+  {
+   "id": 404,
+   "web_name": "Reijnders",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.455
+  },
+  {
+   "id": 329,
+   "web_name": "Rodon",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.454
+  },
+  {
+   "id": 188,
+   "web_name": "Torp",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.453
+  },
+  {
+   "id": 130,
+   "web_name": "Wieffer",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.451
+  },
+  {
+   "id": 392,
+   "web_name": "Aït-Nouri",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.45
+  },
+  {
+   "id": 152,
+   "web_name": "Palestra",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.449
+  },
+  {
+   "id": 373,
+   "web_name": "C.Jones",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.442
+  },
+  {
+   "id": 18,
+   "web_name": "Martinelli",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.442
+  },
+  {
+   "id": 308,
+   "web_name": "Furlong",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.439
+  },
+  {
+   "id": 120,
+   "web_name": "Svoboda",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.438
+  },
+  {
+   "id": 85,
+   "web_name": "Van den Berg",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.422
+  },
+  {
+   "id": 266,
+   "web_name": "Cairney",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.417
+  },
+  {
+   "id": 243,
+   "web_name": "Alcaraz",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.416
+  },
+  {
+   "id": 535,
+   "web_name": "Alderete",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.414
+  },
+  {
+   "id": 160,
+   "web_name": "Garnacho",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.41
+  },
+  {
+   "id": 309,
+   "web_name": "Núñez",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.409
+  },
+  {
+   "id": 470,
+   "web_name": "Morato",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.409
+  },
+  {
+   "id": 648,
+   "web_name": "Bahoya",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.406
+  },
+  {
+   "id": 616,
+   "web_name": "Bouaddi",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.38
+  },
+  {
+   "id": 639,
+   "web_name": "Ángel",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.376
+  },
+  {
+   "id": 458,
+   "web_name": "Joelinton",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.374
+  },
+  {
+   "id": 550,
+   "web_name": "Jocelin.T",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.373
+  },
+  {
+   "id": 484,
+   "web_name": "Hutchinson",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.371
+  },
+  {
+   "id": 487,
+   "web_name": "Dominguez",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.364
+  },
+  {
+   "id": 231,
+   "web_name": "Keane",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.363
+  },
+  {
+   "id": 44,
+   "web_name": "Bailey",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.362
+  },
+  {
+   "id": 325,
+   "web_name": "Darlow",
+   "position": "GKP",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.351
+  },
+  {
+   "id": 518,
+   "web_name": "P.M.Sarr",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.349
+  },
+  {
+   "id": 448,
+   "web_name": "Burn",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.349
+  },
+  {
+   "id": 317,
+   "web_name": "Hirst",
+   "position": "FWD",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.346
+  },
+  {
+   "id": 539,
+   "web_name": "O'Nien",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.344
+  },
+  {
+   "id": 42,
+   "web_name": "Guessand",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.338
+  },
+  {
+   "id": 80,
+   "web_name": "Enes Ünal",
+   "position": "FWD",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.336
+  },
+  {
+   "id": 66,
+   "web_name": "Soler",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.336
+  },
+  {
+   "id": 549,
+   "web_name": "Talbi",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.333
+  },
+  {
+   "id": 630,
+   "web_name": "Harwood-Bellis",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.33
+  },
+  {
+   "id": 198,
+   "web_name": "Henderson",
+   "position": "GKP",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.325
+  },
+  {
+   "id": 35,
+   "web_name": "Bogarde",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.325
+  },
+  {
+   "id": 594,
+   "web_name": "Gozo",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.324
+  },
+  {
+   "id": 489,
+   "web_name": "Yates",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.32
+  },
+  {
+   "id": 523,
+   "web_name": "Moore",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.312
+  },
+  {
+   "id": 288,
+   "web_name": "Dowell",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.311
+  },
+  {
+   "id": 485,
+   "web_name": "Bakwa",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.304
+  },
+  {
+   "id": 410,
+   "web_name": "Monga",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.303
+  },
+  {
+   "id": 548,
+   "web_name": "Rigg",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.303
+  },
+  {
+   "id": 561,
+   "web_name": "Morita",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.302
+  },
+  {
+   "id": 206,
+   "web_name": "Chadi Riad",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.301
+  },
+  {
+   "id": 505,
+   "web_name": "Spence",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.3
+  },
+  {
+   "id": 241,
+   "web_name": "McNeil",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.298
+  },
+  {
+   "id": 30,
+   "web_name": "Digne",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.298
+  },
+  {
+   "id": 395,
+   "web_name": "Lewis",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.291
+  },
+  {
+   "id": 321,
+   "web_name": "Walle Egeli",
+   "position": "FWD",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.289
+  },
+  {
+   "id": 215,
+   "web_name": "Devenny",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.289
+  },
+  {
+   "id": 341,
+   "web_name": "Gnonto",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.271
+  },
+  {
+   "id": 185,
+   "web_name": "Sakamoto",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.265
+  },
+  {
+   "id": 121,
+   "web_name": "Mitoma",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.261
+  },
+  {
+   "id": 143,
+   "web_name": "Chalobah",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.258
+  },
+  {
+   "id": 77,
+   "web_name": "Adli",
+   "position": "MID",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.254
+  },
+  {
+   "id": 442,
+   "web_name": "Pope",
+   "position": "GKP",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.251
+  },
+  {
+   "id": 333,
+   "web_name": "Bornauw",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.248
+  },
+  {
+   "id": 255,
+   "web_name": "J.Cuenca",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.247
+  },
+  {
+   "id": 301,
+   "web_name": "Palmer",
+   "position": "GKP",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.247
+  },
+  {
+   "id": 593,
+   "web_name": "David",
+   "position": "FWD",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.246
+  },
+  {
+   "id": 651,
+   "web_name": "J.Angulo",
+   "position": "FWD",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.246
+  },
+  {
+   "id": 621,
+   "web_name": "McAidoo",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.238
+  },
+  {
+   "id": 48,
+   "web_name": "Onana",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.235
+  },
+  {
+   "id": 312,
+   "web_name": "Taylor",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.233
+  },
+  {
+   "id": 140,
+   "web_name": "Sánchez",
+   "position": "GKP",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.233
+  },
+  {
+   "id": 396,
+   "web_name": "Vitor Reis",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.222
+  },
+  {
+   "id": 21,
+   "web_name": "Nørgaard",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.219
+  },
+  {
+   "id": 578,
+   "web_name": "Mudryk",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.217
+  },
+  {
+   "id": 207,
+   "web_name": "Mingueza",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.215
+  },
+  {
+   "id": 622,
+   "web_name": "Braithwaite",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.213
+  },
+  {
+   "id": 281,
+   "web_name": "Drameh",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.211
+  },
+  {
+   "id": 128,
+   "web_name": "Buonanotte",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.203
+  },
+  {
+   "id": 623,
+   "web_name": "Bentley",
+   "position": "GKP",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.194
+  },
+  {
+   "id": 220,
+   "web_name": "Cardines",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.191
+  },
+  {
+   "id": 370,
+   "web_name": "Chiesa",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.187
+  },
+  {
+   "id": 351,
+   "web_name": "Mamardashvili",
+   "position": "GKP",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.184
+  },
+  {
+   "id": 636,
+   "web_name": "Osorio",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.182
+  },
+  {
+   "id": 547,
+   "web_name": "Mundle",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.167
+  },
+  {
+   "id": 359,
+   "web_name": "Gomez",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.163
+  },
+  {
+   "id": 270,
+   "web_name": "Reed",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.162
+  },
+  {
+   "id": 29,
+   "web_name": "M.Bizot",
+   "position": "GKP",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.161
+  },
+  {
+   "id": 380,
+   "web_name": "Ekitiké",
+   "position": "FWD",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.159
+  },
+  {
+   "id": 497,
+   "web_name": "Dubravka",
+   "position": "GKP",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.158
+  },
+  {
+   "id": 482,
+   "web_name": "Hudson-Odoi",
+   "position": "MID",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.156
+  },
+  {
+   "id": 521,
+   "web_name": "Kulusevski",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.155
+  },
+  {
+   "id": 319,
+   "web_name": "Szmodics",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.153
+  },
+  {
+   "id": 180,
+   "web_name": "Woolfenden",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.148
+  },
+  {
+   "id": 494,
+   "web_name": "Vicario",
+   "position": "GKP",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.148
+  },
+  {
+   "id": 38,
+   "web_name": "A.García",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.146
+  },
+  {
+   "id": 272,
+   "web_name": "Kusi-Asare",
+   "position": "FWD",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.145
+  },
+  {
+   "id": 342,
+   "web_name": "Harrison",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.145
+  },
+  {
+   "id": 89,
+   "web_name": "Henry",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.143
+  },
+  {
+   "id": 435,
+   "web_name": "Lacey",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.142
+  },
+  {
+   "id": 451,
+   "web_name": "A.Murphy",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.138
+  },
+  {
+   "id": 141,
+   "web_name": "Jörgensen",
+   "position": "GKP",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.137
+  },
+  {
+   "id": 135,
+   "web_name": "Yohanna",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.137
+  },
+  {
+   "id": 513,
+   "web_name": "Xavi",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.136
+  },
+  {
+   "id": 103,
+   "web_name": "Dasilva",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.136
+  },
+  {
+   "id": 438,
+   "web_name": "Fletcher",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.132
+  },
+  {
+   "id": 2,
+   "web_name": "Arrizabalaga",
+   "position": "GKP",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.124
+  },
+  {
+   "id": 500,
+   "web_name": "Romero",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.124
+  },
+  {
+   "id": 517,
+   "web_name": "Odobert",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.12
+  },
+  {
+   "id": 576,
+   "web_name": "Hjertø-Dahl",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.115
+  },
+  {
+   "id": 24,
+   "web_name": "Nelson",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.113
+  },
+  {
+   "id": 560,
+   "web_name": "Targett",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.109
+  },
+  {
+   "id": 546,
+   "web_name": "Adingra",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.109
+  },
+  {
+   "id": 508,
+   "web_name": "Davies",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.108
+  },
+  {
+   "id": 416,
+   "web_name": "De Ligt",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.107
+  },
+  {
+   "id": 352,
+   "web_name": "Woodman",
+   "position": "GKP",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.106
+  },
+  {
+   "id": 348,
+   "web_name": "Piroe",
+   "position": "FWD",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.101
+  },
+  {
+   "id": 360,
+   "web_name": "Bradley",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.099
+  },
+  {
+   "id": 314,
+   "web_name": "Ogbene",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.098
+  },
+  {
+   "id": 62,
+   "web_name": "Diakité",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.094
+  },
+  {
+   "id": 433,
+   "web_name": "Ugarte",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.094
+  },
+  {
+   "id": 344,
+   "web_name": "Gruev",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.093
+  },
+  {
+   "id": 326,
+   "web_name": "Perri",
+   "position": "GKP",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.093
+  },
+  {
+   "id": 139,
+   "web_name": "Ferguson",
+   "position": "FWD",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.091
+  },
+  {
+   "id": 169,
+   "web_name": "Mheuka",
+   "position": "FWD",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.087
+  },
+  {
+   "id": 285,
+   "web_name": "McNair",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.083
+  },
+  {
+   "id": 383,
+   "web_name": "Elliott",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.083
+  },
+  {
+   "id": 531,
+   "web_name": "Ellborg",
+   "position": "GKP",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.081
+  },
+  {
+   "id": 163,
+   "web_name": "D.Essugo",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.08
+  },
+  {
+   "id": 150,
+   "web_name": "M.Sarr",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.08
+  },
+  {
+   "id": 234,
+   "web_name": "Patterson",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.078
+  },
+  {
+   "id": 466,
+   "web_name": "Neave",
+   "position": "FWD",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.078
+  },
+  {
+   "id": 58,
+   "web_name": "Forster",
+   "position": "GKP",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.078
+  },
+  {
+   "id": 408,
+   "web_name": "Phillips",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.078
+  },
+  {
+   "id": 218,
+   "web_name": "Doucouré",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.077
+  },
+  {
+   "id": 146,
+   "web_name": "B.Badiashile",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.077
+  },
+  {
+   "id": 22,
+   "web_name": "Nwaneri",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.077
+  },
+  {
+   "id": 374,
+   "web_name": "Endo",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.077
+  },
+  {
+   "id": 3,
+   "web_name": "Meslier",
+   "position": "GKP",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.075
+  },
+  {
+   "id": 63,
+   "web_name": "Milosavljević",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.071
+  },
+  {
+   "id": 511,
+   "web_name": "Souza",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.071
+  },
+  {
+   "id": 227,
+   "web_name": "Travers",
+   "position": "GKP",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.071
+  },
+  {
+   "id": 111,
+   "web_name": "Steele",
+   "position": "GKP",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.071
+  },
+  {
+   "id": 118,
+   "web_name": "Igor",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.071
+  },
+  {
+   "id": 137,
+   "web_name": "Tzimas",
+   "position": "FWD",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.071
+  },
+  {
+   "id": 540,
+   "web_name": "Masuaku",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.07
+  },
+  {
+   "id": 216,
+   "web_name": "Esse",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.07
+  },
+  {
+   "id": 158,
+   "web_name": "Gittens",
+   "position": "MID",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.07
+  },
+  {
+   "id": 217,
+   "web_name": "M.França",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.07
+  },
+  {
+   "id": 23,
+   "web_name": "Fábio Vieira",
+   "position": "MID",
+   "team_code": 3,
+   "has_fixture": true,
+   "pred_total_points": 0.07
+  },
+  {
+   "id": 475,
+   "web_name": "Savona",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.069
+  },
+  {
+   "id": 659,
+   "web_name": "Miley",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 275,
+   "web_name": "Cartwright",
+   "position": "GKP",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 609,
+   "web_name": "Shahar",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 251,
+   "web_name": "Lecomte",
+   "position": "GKP",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 252,
+   "web_name": "McNally",
+   "position": "GKP",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 604,
+   "web_name": "Williams-Barnett",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 603,
+   "web_name": "Cresswell",
+   "position": "MID",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 602,
+   "web_name": "Lienou",
+   "position": "DEF",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 99,
+   "web_name": "Milambo",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 273,
+   "web_name": "Phillips",
+   "position": "GKP",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 274,
+   "web_name": "Butland",
+   "position": "GKP",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 276,
+   "web_name": "Lo-Tutala",
+   "position": "GKP",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 235,
+   "web_name": "Aznou",
+   "position": "DEF",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 510,
+   "web_name": "Rowswell",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 283,
+   "web_name": "Jacob",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 284,
+   "web_name": "McCarthy",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 92,
+   "web_name": "Ji-soo",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 291,
+   "web_name": "Matazo",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 292,
+   "web_name": "Ömür",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 293,
+   "web_name": "Kamara",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 587,
+   "web_name": "Rulli",
+   "position": "GKP",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 294,
+   "web_name": "Zambrano",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 296,
+   "web_name": "Akintola",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 610,
+   "web_name": "De Fougerolles",
+   "position": "DEF",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 615,
+   "web_name": "Di Gregorio",
+   "position": "GKP",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 228,
+   "web_name": "King",
+   "position": "GKP",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 658,
+   "web_name": "Ibrahim",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 657,
+   "web_name": "Nunes",
+   "position": "MID",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 133,
+   "web_name": "Watson",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 654,
+   "web_name": "Graham",
+   "position": "MID",
+   "team_code": 11,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 653,
+   "web_name": "Samba",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 652,
+   "web_name": "Azeez",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 134,
+   "web_name": "Oriola",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 660,
+   "web_name": "Fredrick",
+   "position": "DEF",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 661,
+   "web_name": "Balcombe",
+   "position": "GKP",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 132,
+   "web_name": "Howell",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 645,
+   "web_name": "Mouzakitis",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 641,
+   "web_name": "Ansah",
+   "position": "FWD",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 664,
+   "web_name": "Pivas",
+   "position": "DEF",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 629,
+   "web_name": "Allan",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 665,
+   "web_name": "Salia",
+   "position": "FWD",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 627,
+   "web_name": "Zetterer",
+   "position": "GKP",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 626,
+   "web_name": "Cairns",
+   "position": "GKP",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 625,
+   "web_name": "Zepa",
+   "position": "MID",
+   "team_code": 54,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 624,
+   "web_name": "Cozier-Duberry",
+   "position": "MID",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 298,
+   "web_name": "Destan",
+   "position": "FWD",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 117,
+   "web_name": "Coppola",
+   "position": "DEF",
+   "team_code": 36,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 666,
+   "web_name": "Mills",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 297,
+   "web_name": "Gyabi",
+   "position": "MID",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 278,
+   "web_name": "Hughes",
+   "position": "DEF",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 667,
+   "web_name": "Thompson",
+   "position": "MID",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 443,
+   "web_name": "Gillespie",
+   "position": "GKP",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 425,
+   "web_name": "Fredricson",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 424,
+   "web_name": "Amass",
+   "position": "DEF",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 299,
+   "web_name": "Burstow",
+   "position": "FWD",
+   "team_code": 88,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 414,
+   "web_name": "Heaton",
+   "position": "GKP",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 413,
+   "web_name": "Bayindir",
+   "position": "GKP",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 409,
+   "web_name": "Mukasa",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 407,
+   "web_name": "Echeverri",
+   "position": "MID",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 59,
+   "web_name": "Dennis",
+   "position": "GKP",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 65,
+   "web_name": "J.Araujo",
+   "position": "DEF",
+   "team_code": 91,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 437,
+   "web_name": "Bendito Mantato",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 394,
+   "web_name": "Alleyne",
+   "position": "DEF",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 386,
+   "web_name": "Bettinelli",
+   "position": "GKP",
+   "team_code": 43,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 436,
+   "web_name": "Collyer",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 441,
+   "web_name": "Obi",
+   "position": "FWD",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 434,
+   "web_name": "J.Fletcher",
+   "position": "MID",
+   "team_code": 1,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 444,
+   "web_name": "Jaouen",
+   "position": "GKP",
+   "team_code": 4,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 495,
+   "web_name": "Austin",
+   "position": "GKP",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 524,
+   "web_name": "Olusesi",
+   "position": "MID",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 509,
+   "web_name": "Byfield",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 507,
+   "web_name": "Phillips",
+   "position": "DEF",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 311,
+   "web_name": "Burns",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 528,
+   "web_name": "Scarlett",
+   "position": "FWD",
+   "team_code": 6,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 349,
+   "web_name": "Mateo Joseph",
+   "position": "FWD",
+   "team_code": 2,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 83,
+   "web_name": "Valdimarsson",
+   "position": "GKP",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.068
+  },
+  {
+   "id": 538,
+   "web_name": "Hjelde",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 537,
+   "web_name": "Seelt",
+   "position": "DEF",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 197,
+   "web_name": "Bassette",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 170,
+   "web_name": "Emegha",
+   "position": "FWD",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 171,
+   "web_name": "Dovin",
+   "position": "GKP",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 663,
+   "web_name": "Wright",
+   "position": "GKP",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 172,
+   "web_name": "Wilson",
+   "position": "GKP",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 196,
+   "web_name": "Markelo",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 193,
+   "web_name": "Wright",
+   "position": "FWD",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 39,
+   "web_name": "Nedeljkovic",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 192,
+   "web_name": "Andrews",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 177,
+   "web_name": "Kesler-Hayden",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 191,
+   "web_name": "Borges Rodrigues",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 530,
+   "web_name": "Patterson",
+   "position": "GKP",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 168,
+   "web_name": "Marc Guiu",
+   "position": "FWD",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 189,
+   "web_name": "Shepherd",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 187,
+   "web_name": "Eccles",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 181,
+   "web_name": "Brau",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 178,
+   "web_name": "Bidwell",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 655,
+   "web_name": "Gboho",
+   "position": "MID",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 174,
+   "web_name": "Kitching",
+   "position": "DEF",
+   "team_code": 9,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 582,
+   "web_name": "Madjo",
+   "position": "FWD",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 205,
+   "web_name": "Sosa",
+   "position": "DEF",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 606,
+   "web_name": "Lynch",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 353,
+   "web_name": "Pecsi",
+   "position": "GKP",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 354,
+   "web_name": "Jaros",
+   "position": "GKP",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 355,
+   "web_name": "Davies",
+   "position": "GKP",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 361,
+   "web_name": "Lucky",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 363,
+   "web_name": "Leoni",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 49,
+   "web_name": "Iling Jr",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 376,
+   "web_name": "Bajcetic",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 378,
+   "web_name": "McConnell",
+   "position": "MID",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 382,
+   "web_name": "Danns",
+   "position": "FWD",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 605,
+   "web_name": "Rowe",
+   "position": "DEF",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 365,
+   "web_name": "Ramsay",
+   "position": "DEF",
+   "team_code": 14,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 50,
+   "web_name": "Burrowes",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 107,
+   "web_name": "Furo",
+   "position": "FWD",
+   "team_code": 94,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 558,
+   "web_name": "Anselmino",
+   "position": "DEF",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 557,
+   "web_name": "Penders",
+   "position": "GKP",
+   "team_code": 8,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 614,
+   "web_name": "Ahoka",
+   "position": "MID",
+   "team_code": 56,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 617,
+   "web_name": "Goretzka",
+   "position": "MID",
+   "team_code": 7,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 225,
+   "web_name": "Uche",
+   "position": "FWD",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 221,
+   "web_name": "Drakes-Thomas",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 219,
+   "web_name": "J.Rak-Sakyi",
+   "position": "MID",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 559,
+   "web_name": "Matthews",
+   "position": "GKP",
+   "team_code": 31,
+   "has_fixture": true,
+   "pred_total_points": 0.067
+  },
+  {
+   "id": 307,
+   "web_name": "Johnson",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.06
+  },
+  {
+   "id": 479,
+   "web_name": "Bindon",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.059
+  },
+  {
+   "id": 590,
+   "web_name": "Benda",
+   "position": "GKP",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.059
+  },
+  {
+   "id": 476,
+   "web_name": "O.Richards",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.059
+  },
+  {
+   "id": 468,
+   "web_name": "John",
+   "position": "GKP",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.059
+  },
+  {
+   "id": 324,
+   "web_name": "Mehmeti",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 322,
+   "web_name": "Al-Hamadi",
+   "position": "FWD",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 310,
+   "web_name": "Matusiwa",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 601,
+   "web_name": "Humphreys",
+   "position": "MID",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 303,
+   "web_name": "Kipré",
+   "position": "DEF",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 302,
+   "web_name": "Button",
+   "position": "GKP",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 562,
+   "web_name": "Van Oevelen",
+   "position": "GKP",
+   "team_code": 40,
+   "has_fixture": true,
+   "pred_total_points": 0.058
+  },
+  {
+   "id": 477,
+   "web_name": "Abbott",
+   "position": "DEF",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.056
+  },
+  {
+   "id": 493,
+   "web_name": "Kalimuendo",
+   "position": "FWD",
+   "team_code": 17,
+   "has_fixture": true,
+   "pred_total_points": 0.051
+  }
+ ]
+}
