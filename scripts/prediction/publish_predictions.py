@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from predict_next_gw import (
+from scripts.prediction.predict_next_gw import (
     CURRENT_SEASON,
     MODEL_PATH,
     PLAYERS_PATH,

@@ -11,13 +11,13 @@ from pathlib import Path
 import lightgbm as lgb
 import pandas as pd
 
-from build_features import (
+from scripts.models.v1.build_features import (
     COMBINED_PATH,
     add_form_rolling_features,
     add_time_ordering,
     aggregate_to_gw_level,
 )
-from train_model import FEATURES_PATH
+from scripts.models.v1.train_model import FEATURES_PATH
 
 MODEL_PATH = Path("models/lgbm_total_points.txt")
 

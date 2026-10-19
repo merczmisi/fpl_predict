@@ -15,7 +15,7 @@ strength_indicator is interpolated from opponent_team_strength (1-5):
 
 import numpy as np
 
-from train_model import evaluate_predictions, load_splits, print_metrics
+from scripts.models.v1.train_model import evaluate_predictions, load_splits, print_metrics
 
 STRENGTH_LEVELS = [1, 2, 3, 4, 5]
 STRENGTH_INDICATORS = [1.15, 1.08, 1.00, 0.92, 0.85]
