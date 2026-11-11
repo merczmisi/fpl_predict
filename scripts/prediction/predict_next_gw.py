@@ -76,12 +76,12 @@ def build_fixture_context(target_gw):
 
 
 def target_time_index(history, target_season, target_gw):
-    """Dense time_index consistent with the one already assigned in `history`."""
-    season_rows = history[history["season"] == target_season]
-    if season_rows.empty:
-        raise ValueError(f"No history found for season {target_season}; cannot infer its season rank")
-
-    season_rank = (season_rows["time_index"] - season_rows["gw"]).iloc[0] // 38
+    """Dense time_index consistent with history, including a not-yet-played season."""
+    season_start_year = int(target_season[:4])
+    season_years = sorted(
+        set(history["season"].str[:4].astype(int)) | {season_start_year}
+    )
+    season_rank = season_years.index(season_start_year)
     return season_rank * 38 + target_gw
 
 
@@ -175,7 +175,7 @@ def top_players_by_position(n_per_position=None, target_gw=None):
     None uses the default FPL squad sizes.
     """
     if n_per_position is None:
-        n_per_position = {"FWD": 20}
+        n_per_position = {"MID": 40}
     elif isinstance(n_per_position, int):
         n_per_position = {pos: n_per_position for pos in POSITION_CATEGORIES}
 
@@ -189,13 +189,13 @@ def top_players_by_position(n_per_position=None, target_gw=None):
 
 
 def main():
-    target_gw = detect_target_gw()
-    result = predict_players(PLAYER_IDS, target_gw)
-    print(f"Predictions for {CURRENT_SEASON} gw{target_gw} (as of gw{target_gw - 1}):")
-    print(result.to_string(index=False))
+    # target_gw = detect_target_gw()
+    # result = predict_players(PLAYER_IDS, target_gw)
+    # print(f"Predictions for {CURRENT_SEASON} gw{target_gw} (as of gw{target_gw - 1}):")
+    # print(result.to_string(index=False))
 
-    # print(f"\nTop players by position for gw{target_gw}:")
-    # print(top_players_by_position().to_string(index=False))
+    print(f"\nTop players by position for gw{9}:")
+    print(top_players_by_position(target_gw=9).to_string(index=False))
 
 
 if __name__ == "__main__":
