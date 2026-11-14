@@ -20,3 +20,13 @@ Auto-Clarity: plain prose for security warnings, irreversible actions, step orde
 Boundaries: code, comments, commits, PRs, docs written normal; existing comments kept unless asked.
 Floor: code, commands, paths, numbers and error strings verbatim; never drop not/never/no/only.
 <!-- caveman-end -->
+
+## Agent skills
+
+### Issue tracker
+
+Issues and specs live as markdown files in `.scratch/`. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context layout with root `GLOSSARY.md` and `docs/adr/`. See `docs/agents/domain.md`.
