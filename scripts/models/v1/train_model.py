@@ -32,6 +32,7 @@ CATEGORICAL_COLS = ["position"]
 
 PRECISION_CUTOFFS = (1, 3, 5, 10, 20)
 NDCG_CUTOFFS = (5, 10, 20)
+TOP_PICK_CUTOFFS = (5, 11)
 
 
 def load_splits():
@@ -83,6 +84,7 @@ def ranking_metrics(df, y_true_col, y_pred_col):
     spearmans = []
     precisions = {k: [] for k in PRECISION_CUTOFFS}
     ndcgs = {k: [] for k in NDCG_CUTOFFS}
+    top_pick_points = {k: [] for k in TOP_PICK_CUTOFFS}
 
     for _, group in df.groupby(["season", "gw"]):
         if group.empty:
@@ -108,6 +110,11 @@ def ranking_metrics(df, y_true_col, y_pred_col):
             idcg = np.sum(relevance[ideal_order[:k]] / discounts)
             ndcgs[k].append(float(dcg / idcg) if idcg else 0.0)
 
+        # Actual points scored by the k players we predicted to score most.
+        for k in top_pick_points:
+            top_pred = group.nlargest(k, y_pred_col)
+            top_pick_points[k].append(float(top_pred[y_true_col].sum()))
+
     metrics = {
         "mean_spearman_per_gw": float(np.mean(spearmans)) if spearmans else float("nan"),
         "num_gameweeks_evaluated": len(spearmans),
@@ -119,6 +126,10 @@ def ranking_metrics(df, y_true_col, y_pred_col):
     metrics.update({
         f"mean_ndcg@{k}_per_gw": float(np.mean(values))
         for k, values in ndcgs.items()
+    })
+    metrics.update({
+        f"top{k}_pts_per_gw": float(np.mean(values))
+        for k, values in top_pick_points.items()
     })
     return metrics
 
