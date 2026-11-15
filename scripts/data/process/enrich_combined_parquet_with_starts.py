@@ -32,8 +32,20 @@ print(f"\nSeasons in combined parquet: {all_seasons}")
 
 merged_count = 0
 
-# Process each season GW16+ (where starts data exists in raw JSON)
+# Determine which seasons have starts data:
+# - 2020-21, 2021-22: No starts data at all
+# - 2022-23: Starts data from GW16 onward
+# - 2023-24+: Starts data for all GWs
+min_season_with_starts = '2022-23'
+min_gw_for_2022_23 = 16
+
+# Process each season where starts data exists
 for season in all_seasons:
+    # Skip seasons before 2022-23 (no starts data)
+    if season < min_season_with_starts:
+        print(f"\n{season}: No starts data available, skipping")
+        continue
+    
     season_dir = raw_data_dir / season / "players"
     
     if not season_dir.exists():
@@ -51,13 +63,16 @@ for season in all_seasons:
     element_to_player_id = dict(zip(players_csv['id'], players_csv['code']))
     print(f"  Loaded {len(element_to_player_id)} player mappings")
     
-    # Get GW16+ for this season
-    season_gws = sorted(df[(df['season'] == season) & (df['gw'] >= 16)]['gw'].unique())
+    # Determine min GW for this season
+    min_gw = min_gw_for_2022_23 if season == '2022-23' else 1
+    
+    # Get GWs for this season (GW16+ for 2022-23, all for later seasons)
+    season_gws = sorted(df[(df['season'] == season) & (df['gw'] >= min_gw)]['gw'].unique())
     if not season_gws:
-        print(f"  No GW16+ data in combined parquet for {season}")
+        print(f"  No data in combined parquet for {season}")
         continue
     
-    print(f"  GWs to enrich: {list(season_gws)}")
+    print(f"  GWs to enrich (GW{min_gw}+): {list(season_gws)}")
     
     for gw in season_gws:
         gw_file = season_dir / f"gw_{gw}.json"
