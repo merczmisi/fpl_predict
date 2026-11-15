@@ -1,22 +1,18 @@
-# 04: Build inference pipeline with combined predictions
+# 04: Build v4 inference pipeline
 
 **What to build:**
 
-Load the three trained models. For each (player, fixture) in the test set, compute combined prediction:
-```
-E[points] = P(start) × E[points | starts] + (1 − P(start)) × E[points | ¬starts]
-```
-
-Aggregate fixture-level predictions to gameweek level (sum all fixtures for each player-gw pair). Output predictions in format compatible with evaluation: player_id, season, gw, predicted_points, and optionally model component breakdown (P(start), E[points|start], E[points|¬start]).
+Given three trained models and v4 features, implement fixture-level and gameweek-level prediction. For each (player, fixture), compute E[pts] = P(start) × E[pts | starts] + (1 − P(start)) × E[pts | ¬starts]. Support external start probabilities (e.g., from news/team data) to override the classifier. Aggregate fixture predictions to gw level for output. Produce XI-ready forecasts for downstream use (draft selection, captaincy analysis).
 
 **Blocked by:** 03: Train three independent LightGBM models
 
 **Status:** ready-for-agent
 
-- [ ] All three models load successfully
-- [ ] Combined prediction formula computes correctly (spot-check: sample row has E[pts] between component bounds)
-- [ ] Fixture-level predictions complete (no missing players or fixtures)
-- [ ] Gameweek aggregation sums all fixtures for (player, season, gw) correctly
-- [ ] Output format matches v1 for direct comparison (player_id, season, gw, predicted_points)
-- [ ] Optional: component breakdown included (P_start, E_start, E_not_start columns for analysis)
-- [ ] Output parquet or CSV written to models/v4/predictions_test_2025_26.parquet
+- [ ] Fixture-level prediction formula implemented: E[pts] = P(start) × E[pts|start] + (1−P(start)) × E[pts|¬start]
+- [ ] Three trained models loaded and callable
+- [ ] External start probability accepted as override; classifier used as fallback
+- [ ] Gameweek aggregation: fixture-level predictions summed to gw level
+- [ ] Output format: player, gameweek, predicted points, confidence
+- [ ] Spot checks: predict on sample players, verify formula correctness
+- [ ] Integration: accept fixture data in same format as training
+- [ ] Performance: inference on full dataset completes in acceptable time

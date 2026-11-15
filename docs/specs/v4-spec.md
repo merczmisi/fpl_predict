@@ -59,7 +59,7 @@ This separation allows:
 
 ### Data Pipeline
 
-- **Start label availability**: Enrich the combined parquet with the `starts` column from raw fixture JSON (2022-23 GW16 onward). Earlier rows have unknown start labels; do not substitute zero.
+- **Start label availability**: Enrich the combined parquet with the `starts` column from raw fixture JSON. Field absent for all gameweeks in seasons before 2022-23; begins 2022-23 GW16 onward; present for all gameweeks in seasons after 2022-23. Earlier rows have unknown start labels; do not substitute zero.
 - **Rolling history retention**: Include pre-GW16 fixtures in rolling feature computation (minutes, points, position). These rows contribute only to feature engineering, not to training labels.
 - **Double-gameweek aggregation**: Sum fixture-level points and minutes before any label construction, since FPL scores one total per gw.
 - **Feature computation timing**: All rolling features must use only pre-deadline information. For double-gameweek players, neither fixture's outcome enters features computed before that gw's deadline.
@@ -122,7 +122,7 @@ Three seams, tested highest to lowest:
 
 ## Further Notes
 
-- **Start label availability cutoff**: 2022-23 GW16 is the earliest reliable data point. Earlier seasons can contribute rolling history but not training labels.
+- **Start label availability cutoff**: Field absent for all gameweeks in seasons before 2022-23. Becomes available 2022-23 GW16 onward. Present for all gameweeks in seasons after 2022-23. This is the earliest reliable data point.
 - **Unknown vs. zero**: For rows before GW16 or with missing starts, do not infer; mark as unknown and exclude from training. This preserves data integrity.
 - **Fixture vs. gameweek aggregation**: Features are computed at fixture level. Training and validation happen at fixture level. Predictions are then summed to gameweek level for evaluation and output.
 - **Production testing**: The observed 2026-27 gap (expected ~10 points lower than actual per XI per 10 gw) is production feedback, not training data. Use it to validate that v4 closes the bias.

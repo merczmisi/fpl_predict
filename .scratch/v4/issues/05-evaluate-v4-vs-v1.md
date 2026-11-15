@@ -1,24 +1,17 @@
-# 05: Evaluate v4 against v1 and measure gap closure
+# 05: Evaluate v4 against v1 and measure bias closure
 
 **What to build:**
 
-Load v1 and v4 predictions on the same 2025-26 test set. Compare performance:
-- Spearman correlation per gameweek and overall
-- MAE and RMSE at player and XI level
-- Signed bias (expected − actual) per player and XI
-- Probability calibration curve for v4 starts classifier
+Run v1 and v4 models on the same held-out 2025-26 test set and production data (2026-27). Compare Spearman correlation, MAE, RMSE, and signed bias (expected vs actual points). Measure player-level and XI-level bias on 2026-27 if historical selections available. Confirm that v4 closes the observed production gap (expected ~10 points lower than actual per XI per 10 gw observed in 2026-27). Document findings in a comparison report.
 
-Report whether v4 closes the observed production gap (expected points ~10 lower than actual per XI per 10 gw in 2026-27). Identify which component (starts classifier, conditional models, or combination) contributes most to any improvement.
-
-**Blocked by:** 04: Build inference pipeline with combined predictions
+**Blocked by:** 04: Build v4 inference pipeline
 
 **Status:** ready-for-agent
 
-- [ ] v1 and v4 predictions loaded on identical 2025-26 test set
-- [ ] Spearman correlation computed per gameweek and overall; v4 ≥ v1 or improvement explained
-- [ ] Player-level MAE/RMSE computed and compared: v4 vs v1
-- [ ] XI-level bias analyzed: expected vs actual for draft selections (if historical selections available)
-- [ ] Probability calibration for v4 starts classifier: binned P(start) vs actual start rate, plotted
-- [ ] Component contribution analysis: ablate each model to measure its impact on combined prediction
-- [ ] Report generated: metrics table, plots (Spearman trend, calibration curve, bias distribution)
-- [ ] Conclusion: does v4 close the 2026-27 gap or explain why not
+- [ ] v1 and v4 both run on 2025-26 test set (same feature matrix, same split)
+- [ ] Comparison metrics computed: Spearman per gw, MAE, RMSE for both models
+- [ ] Signed bias measured: expected vs actual points per player/gw
+- [ ] XI-level evaluation: if historical selections available, aggregate predictions to XI and measure bias
+- [ ] Production feedback incorporated: 2026-27 bias gap compared before/after v4
+- [ ] Findings documented: Spearman improvement, calibration gain, bias reduction quantified
+- [ ] Report generated: v4 benefits, trade-offs, recommendation for production use

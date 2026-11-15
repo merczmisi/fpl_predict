@@ -2,17 +2,17 @@
 
 **What to build:**
 
-Load the enriched parquet with starts labels. Aggregate double-gameweek fixtures to gw level (sum points and minutes). Compute rolling features (last 3/5/10 gameweeks) for minutes, points, and starts. Calculate start frequency metrics. Exclude rows with unknown starts from training labels but retain them for rolling history computation. Output fixture-level features ready for model training.
+Given the enriched parquet with starts labels, build rolling features for v4 models. Aggregate double-gameweek fixtures to gw level before feature computation. Compute rolling means (last 3/5/10 gw) for minutes, points, and starts. Include opponent identity, home/away flag, gameweek, start frequency, and player position. Retain pre-GW16 and pre-2022-23 fixtures for rolling feature context without including them in training labels. Output a v4 feature parquet ready for model training.
 
 **Blocked by:** 01: Enrich combined parquet with starts labels
 
 **Status:** ready-for-agent
 
-- [ ] Enriched parquet loaded successfully
-- [ ] Double-gameweek fixtures aggregated to single row per (player, season, gw)
-- [ ] Rolling features computed for windows [3, 5, 10]: rolling_mean(minutes), rolling_mean(points), rolling_mean(starts)
-- [ ] Start frequency calculated (starts_last3 / 3, starts_last5 / 5, starts_last10 / 10)
-- [ ] Pre-GW16 rows contribute to rolling history but are marked as non-trainable (starts = unknown)
-- [ ] Training label rows identified: all fixtures from 2022-23 GW16 onward with known starts
-- [ ] No data leakage: all rolling features computed only from data before each fixture's deadline
-- [ ] Output parquet includes: player_id, season, gw, opponent, home/away, position, rolling features, starts label (or NaN for pre-GW16)
+- [ ] Double-gameweek fixtures aggregated to gw level before rolling features
+- [ ] Rolling features computed at fixture level: last 3/5/10 gw for minutes, points, starts
+- [ ] Pre-GW16 and pre-2022-23 fixtures included in rolling window but marked for exclusion from training labels
+- [ ] Feature completeness: opponent, home/away, gw, rolling means, start frequency, position all present
+- [ ] No data leakage: all rolling features use only pre-deadline information
+- [ ] Feature parquet output includes starts column (for labeling) and feature matrix
+- [ ] Row counts: all rows from enriched parquet preserved
+- [ ] Spot checks: verify rolling averages computed correctly on sample players across gw boundaries
