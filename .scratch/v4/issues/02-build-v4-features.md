@@ -4,7 +4,7 @@
 
 Given the enriched parquet with starts labels, build rolling features for v4 models. Aggregate double-gameweek fixtures to gw level before feature computation. Compute rolling means (last 3/5/10 gw) for minutes, points, and starts. Include opponent identity, home/away flag, gameweek, start frequency, and player position. Retain pre-GW16 and pre-2022-23 fixtures for rolling feature context without including them in training labels. Output a v4 feature parquet ready for model training.
 
-**Blocked by:** 01: Enrich combined parquet with starts labels
+**Blocked by:** None
 
 **Status:** ready-for-agent
 
