@@ -30,10 +30,6 @@ ROLLING_MEAN_STATS = [
     "starts",
 ]
 
-# Stats to also express as a "per 90 minutes" rolling rate.
-# Spec contains only rolling means; no per-90 rates required.
-PER90_STATS = []
-
 # Expected stats are NaN before they were tracked; keep NaN instead of 0.
 XSTAT_COLS = ["xG", "xGC", "xA"]
 
@@ -131,36 +127,6 @@ def add_form_rolling_features(df: pd.DataFrame, shift: bool = True) -> pd.DataFr
             .mean()
             .reset_index(level=0, drop=True)
         )
-
-    for stat in PER90_STATS:
-        stat_series = grouped[stat].shift(1) if shift else df[stat]
-        for window in ROLLING_WINDOWS:
-            stat_sum = (
-                stat_series.groupby(df["player_id"])
-                .rolling(window, min_periods=1)
-                .sum()
-                .reset_index(level=0, drop=True)
-            )
-            minutes_sum = (
-                base_minutes.groupby(df["player_id"])
-                .rolling(window, min_periods=1)
-                .sum()
-                .reset_index(level=0, drop=True)
-            )
-            per90 = (stat_sum / minutes_sum) * 90
-            df[f"{stat}_per90_roll{window}"] = per90.where(minutes_sum > 0)
-
-    # Rotation/nailed-on signal: rate of appearances with >=60 minutes played.
-    df["_played_60"] = (df["minutes"] >= 60).astype(float)
-    played_60_series = grouped["_played_60"].shift(1) if shift else df["_played_60"]
-    for window in ROLLING_WINDOWS:
-        df[f"start_rate_roll{window}"] = (
-            played_60_series.groupby(df["player_id"])
-            .rolling(window, min_periods=1)
-            .mean()
-            .reset_index(level=0, drop=True)
-        )
-    df = df.drop(columns=["_played_60"])
 
     return df
 

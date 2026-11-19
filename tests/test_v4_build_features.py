@@ -262,20 +262,6 @@ class TestRollingFeatures:
         assert actual_roll3 == expected_roll3, \
             f"Expected roll3={expected_roll3}, got {actual_roll3} (leakage suspected)"
 
-    def test_start_rate_rolling(self, sample_enriched_data):
-        """start_rate_roll3 = fraction of gws with starts >= 60 min."""
-        agg = aggregate_to_gw_level(sample_enriched_data)
-        ordered = add_time_ordering(agg)
-        featured = add_form_rolling_features(ordered, shift=True)
-        
-        # Player 1: gw 16 (90 min, starts=1), gw 17 (90 min, starts=1), gw 18 (45 min, starts=0), gw 19 (90 min, starts=1)
-        # At gw 19, start_rate_roll3 = avg(1, 0, 1) = 2/3 (shifted, so gw 16+17+18 only)
-        p1_gw19 = featured[(featured["player_id"] == 1) & (featured["gw"] == 19)].iloc[0]
-        expected_rate = 2 / 3  # gw18 has 45 min < 60, so starts=0
-        actual_rate = p1_gw19["start_rate_roll3"]
-        assert abs(actual_rate - expected_rate) < 0.01, \
-            f"Expected start_rate_roll3={expected_rate}, got {actual_rate}"
-
 
 class TestPreLabelDataRetention:
     """Pre-GW16 and pre-2022-23 rows included in rolling windows but marked for exclusion."""
@@ -355,14 +341,14 @@ class TestFeatureOutput:
         assert p2_starts == 1.0, f"Expected player 2 starts=1, got {p2_starts}"
 
     def test_output_has_rolling_features(self, sample_enriched_data):
-        """Output includes rolling means for windows 3, 5, 10."""
+        """Output includes rolling means for windows 3, 5, 10 (spec: minutes, points, starts)."""
         agg = aggregate_to_gw_level(sample_enriched_data)
         ordered = add_time_ordering(agg)
         featured = add_form_rolling_features(ordered, shift=True)
         
         required_cols = ["minutes_roll3", "minutes_roll5", "minutes_roll10",
                          "total_points_roll3", "total_points_roll5", "total_points_roll10",
-                         "start_rate_roll3", "start_rate_roll5", "start_rate_roll10"]
+                         "starts_roll3", "starts_roll5", "starts_roll10"]
         for col in required_cols:
             assert col in featured.columns, f"{col} missing from output"
 
