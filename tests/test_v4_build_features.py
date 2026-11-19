@@ -132,6 +132,101 @@ class TestDGWAggregation:
         agg = aggregate_to_gw_level(dgw_data)
         assert agg.iloc[0]["position"] == "MID"
 
+    def test_dgw_mixed_starts_aggregated_as_mean(self):
+        """DGW with mixed starts=[1, 0] aggregates to mean=0.5."""
+        mixed_starts_dgw = pd.DataFrame({
+            "season": ["2022-23", "2022-23"],
+            "gw": [20, 20],
+            "fixture_id": [200, 201],
+            "player_id": [1, 1],
+            "position": ["MID", "MID"],
+            "team_id": [1, 1],
+            "team_code": ["ARS", "ARS"],
+            "team_strength": [90, 90],
+            "opponent_id": [2, 3],
+            "opponent_team_code": ["MUN", "LIV"],
+            "opponent_team_strength": [85, 88],
+            "opponent_team_promoted": [False, False],
+            "is_home": [True, False],
+            "team_goals": [2.0, 1.0],
+            "opponent_goals": [1.0, 1.0],
+            "minutes": [90, 60],
+            "goals_scored": [1, 0],
+            "assists": [0, 1],
+            "clean_sheets": [1, 0],
+            "yellow_cards": [0, 1],
+            "red_cards": [0, 0],
+            "own_goals": [0, 0],
+            "penalties_missed": [0, 0],
+            "penalties_saved": [0, 0],
+            "bonus": [3, 0],
+            "bps": [30, 15],
+            "xG": [0.5, 0.3],
+            "xGC": [0.4, 0.5],
+            "xA": [0.1, 0.2],
+            "total_points": [9, 6],
+            "starts": [1.0, 0.0],  # Benched in second fixture
+            "creativity": [10.0, 15.0],
+            "ict_index": [25.0, 20.0],
+            "influence": [30.0, 25.0],
+            "threat": [35.0, 30.0],
+            "goals_conceded": [1, 1],
+        })
+        
+        agg = aggregate_to_gw_level(mixed_starts_dgw)
+        
+        assert len(agg) == 1, f"Expected 1 row after DGW aggregation, got {len(agg)}"
+        assert agg.iloc[0]["starts"] == 0.5, \
+            f"Expected starts=0.5 (mean of [1, 0]), got {agg.iloc[0]['starts']}"
+
+    def test_dgw_multi_opponent_encoded(self):
+        """DGW with different opponents encodes both: opponent_team_code = 'MUN,LIV'."""
+        multi_opponent_dgw = pd.DataFrame({
+            "season": ["2022-23", "2022-23"],
+            "gw": [20, 20],
+            "fixture_id": [200, 201],
+            "player_id": [1, 1],
+            "position": ["MID", "MID"],
+            "team_id": [1, 1],
+            "team_code": ["ARS", "ARS"],
+            "team_strength": [90, 90],
+            "opponent_id": [2, 3],
+            "opponent_team_code": ["MUN", "LIV"],
+            "opponent_team_strength": [85, 88],
+            "opponent_team_promoted": [False, False],
+            "is_home": [True, False],
+            "team_goals": [2.0, 1.0],
+            "opponent_goals": [1.0, 1.0],
+            "minutes": [90, 60],
+            "goals_scored": [1, 0],
+            "assists": [0, 1],
+            "clean_sheets": [1, 0],
+            "yellow_cards": [0, 1],
+            "red_cards": [0, 0],
+            "own_goals": [0, 0],
+            "penalties_missed": [0, 0],
+            "penalties_saved": [0, 0],
+            "bonus": [3, 0],
+            "bps": [30, 15],
+            "xG": [0.5, 0.3],
+            "xGC": [0.4, 0.5],
+            "xA": [0.1, 0.2],
+            "total_points": [9, 6],
+            "starts": [1.0, 1.0],
+            "creativity": [10.0, 15.0],
+            "ict_index": [25.0, 20.0],
+            "influence": [30.0, 25.0],
+            "threat": [35.0, 30.0],
+            "goals_conceded": [1, 1],
+        })
+        
+        agg = aggregate_to_gw_level(multi_opponent_dgw)
+        
+        assert len(agg) == 1, f"Expected 1 row after DGW aggregation, got {len(agg)}"
+        # Both opponents should be present, comma-separated
+        opponent_codes = agg.iloc[0]["opponent_team_code"]
+        assert "MUN" in opponent_codes and "LIV" in opponent_codes, \
+            f"Expected both MUN and LIV in opponent codes, got {opponent_codes}"
 
 class TestRollingFeatures:
     """Rolling means computed correctly over prior gameweeks (no leakage)."""

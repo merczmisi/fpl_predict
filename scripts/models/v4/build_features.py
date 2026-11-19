@@ -23,38 +23,16 @@ import pandas as pd
 ROLLING_WINDOWS = [3, 5, 10]
 
 # Raw per-gw stats to turn into rolling mean features.
+# Spec: rolling means for minutes, points, and starts (3 stats × 3 windows = 9 features).
 ROLLING_MEAN_STATS = [
     "minutes",
     "total_points",
-    "goals_scored",
-    "assists",
-    "goals_conceded",
-    "clean_sheets",
-    "yellow_cards",
-    "red_cards",
-    "bonus",
-    "bps",
-    "creativity",
-    "ict_index",
-    "influence",
-    "threat",
-    "xG",
-    "xGC",
-    "xA",
+    "starts",
 ]
 
 # Stats to also express as a "per 90 minutes" rolling rate.
-PER90_STATS = [
-    "goals_scored",
-    "assists",
-    "goals_conceded",
-    "bonus",
-    "bps",
-    "total_points",
-    "xG",
-    "xGC",
-    "xA",
-]
+# Spec contains only rolling means; no per-90 rates required.
+PER90_STATS = []
 
 # Expected stats are NaN before they were tracked; keep NaN instead of 0.
 XSTAT_COLS = ["xG", "xGC", "xA"]
@@ -101,9 +79,9 @@ def aggregate_to_gw_level(df: pd.DataFrame) -> pd.DataFrame:
         position=("position", "first"),
         team_id=("team_id", "first"),
         team_code=("team_code", "first"),
-        opponent_id=("opponent_id", "first"),
-        opponent_team_code=("opponent_team_code", "first"),
-        starts=("starts", "first"),  # Preserve starts label (NaN if pre-label era)
+        opponent_id=("opponent_id", lambda x: ",".join(map(str, x.unique()))),
+        opponent_team_code=("opponent_team_code", lambda x: ",".join(x.unique())),
+        starts=("starts", "mean"),  # Fraction of fixtures where player started
     )
 
     agg["is_home_frac"] = agg["home_fixtures"] / agg["num_fixtures"]
@@ -198,6 +176,11 @@ def add_rolling_features(df: pd.DataFrame) -> pd.DataFrame:
     prev_time_index = grouped["time_index"].shift(1)
     df["gws_since_last_appearance"] = df["time_index"] - prev_time_index
 
+    # Mark rows eligible for training labels (GW16+, season 2022-23+).
+    df["is_training_row"] = ~(
+        (df["gw"] < 16) | (df["season"] < "2022-23")
+    )
+
     df = add_form_rolling_features(df, shift=True)
 
     return df
@@ -233,6 +216,7 @@ def build_v4_features(input_path: Path, output_path: Path) -> None:
         "opponent_team_promoted",
         "career_games_played",
         "gws_since_last_appearance",
+        "is_training_row",
     ]
     feature_cols += [c for c in df.columns if "_roll" in c or c.endswith("_career_avg")]
     label_col = "starts"
