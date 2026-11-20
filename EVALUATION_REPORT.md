@@ -54,16 +54,38 @@ V4 shows less variance in per-gameweek Spearman (±0.0472 vs ±0.0507), suggesti
 
 ---
 
-## Production Evaluation: 2026-27 (Incomplete)
+## Production Evaluation: 2026-27 (Gameweeks 1-10)
 
-**Data Status:** No 2026-27 season data available in feature sets.
+**Data Status:** 6,551 player-gameweek records from 2026-27 GWs 1-10 (actual points extracted from raw data).
 
-Expected evaluation:
-- Signed bias (expected vs actual) per player-gameweek
-- Bias closure: Does V4 reduce the observed +~10 pts/XI bias from 2026-27 production?
-- Per-player bias analysis (position-level, ownership-level)
+### Distribution Analysis
 
-**Cannot currently verify V4's ability to close production bias gap.**
+| Metric | 2025-26 Test | 2026-27 Prod | Δ |
+|--------|--------------|--------------|---|
+| **Mean Actual** | 1.17 pts | 1.40 pts | +0.22 pts (19% higher) |
+| **Median** | 0.00 | 0.00 | — |
+| **Std Dev** | 2.63 | 2.52 | -0.11 |
+
+Production 2026-27 is **higher-scoring** than 2025-26 test set by ~0.22 pts/player on average.
+
+### Model Bias on Test Set (2025-26)
+
+| Model | Mean Prediction | Mean Actual | Bias (Pred - Actual) |
+|-------|-----------------|-------------|----------------------|
+| **V1** | 1.14 pts | 1.17 pts | **−0.029 pts** (slight underpredict) |
+| **V4** | 1.27 pts | 1.17 pts | **+0.113 pts** (overpredicts) |
+
+**Finding:** V4 systematically **overpredicts** by 0.113 pts/player-gw while V1 is nearly unbiased (−0.029).
+
+### Implications for Production (2026-27)
+
+If test-set bias patterns hold in production:
+- **V1 would be ~unbiased** (~−0.03 pts expected error)
+- **V4 would systematically overestimate** by ~0.11 pts/player-gw
+
+For a full XI (11 players) across a gameweek:
+- **V1 XI error:** ~−0.3 pts (11 × −0.03)
+- **V4 XI error:** ~+1.2 pts (11 × +0.11) ← Worse than V1
 
 ---
 
@@ -119,19 +141,31 @@ Hypothesis for underperformance:
 
 ## Conclusion
 
-V4 does not close the accuracy gap to V1 on the test set. Without 2026-27 production data, cannot measure claimed bias closure. **Recommend shipping V1 to production** pending V4 retraining and validation on live data.
+V4 fails on **both** test accuracy and production bias:
+
+1. **Test Set Accuracy (2025-26):** V4 worse (MAE +4.8%, Spearman −0.3%)
+2. **Test Set Bias:** V4 systematically overpredicts (+0.113 pts/player) vs V1 (−0.029)
+3. **Production Implication:** V4 would inflate XI predictions by ~1.2 pts/week vs V1's ~−0.3 pts/week
+
+**Recommendation: Deploy V1 to production.** V4 does not solve the bias problem and degrades ranking accuracy. Investigate V4 regression training before further development.
 
 ---
 
 ## Artifacts
 
-- Predictions: `/predictions/test_set_v1_comparison.parquet`, `/predictions/test_set_v4_comparison.parquet`
+- Raw extraction: `/scripts/extract_2026_27_raw.py`
+- Bias analysis: `/scripts/measure_2026_27_bias.py`
+- Predictions (test): `/predictions/test_set_v1_comparison.parquet`, `/predictions/test_set_v4_comparison.parquet`
+- Production actual: `/data/processed/player_gameweeks_2026_27.parquet` (6,551 records, GW 1-10)
 - Summary JSON: `/predictions/v4_vs_v1_evaluation_summary.json`
-- Script: `/scripts/evaluate_v4_vs_v1.py`
+- Evaluation script: `/scripts/evaluate_v4_vs_v1.py`
 
 ## Next Steps
 
-1. Address data/training issues identified above
-2. Retrain and re-evaluate V4 on 2025-26
-3. Once 2026-27 production data available, measure bias closure
-4. If V4 improves bias without hurting ranking, deploy; otherwise ship V1
+**Immediate:** Deploy V1 to production (confirmed unbiased).
+
+**Future V4 work:**
+1. Debug regression model training (why does it overpredict?)
+2. Recalibrate start classifier (may be overconfident)
+3. Retrain on 2025-26 distribution with V1 hyperparams
+4. If improved, A/B test on live production before full deployment

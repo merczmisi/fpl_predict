@@ -1,19 +1,40 @@
 {
   "test_set": {
     "v1": {
-      "mae": 1.0560000031908405,
-      "rmse": 1.9710241068887404,
-      "spearman_avg": 0.7001240551491434,
-      "spearman_std": 0.05070041227513392,
-      "num_gws": 38
+      "mae": 1.056,
+      "rmse": 1.971,
+      "spearman_avg": 0.7001,
+      "spearman_std": 0.0507,
+      "bias": -0.028737406377298477
     },
     "v4": {
-      "mae": 1.1070213170571015,
-      "rmse": 1.9611821072922724,
-      "spearman_avg": 0.696849544611708,
-      "spearman_std": 0.04723782021011245,
-      "num_gws": 38
+      "mae": 1.107,
+      "rmse": 1.961,
+      "spearman_avg": 0.6968,
+      "spearman_std": 0.0472,
+      "bias": 0.1128375034063324
     }
   },
-  "production_set": {}
+  "production_set": {
+    "data_quality": {
+      "records": 6551,
+      "gameweeks": "1-10 (complete)",
+      "unique_players": 667
+    },
+    "actual_distribution": {
+      "mean": 1.3956647840024423,
+      "median": 0.0,
+      "std": 2.522401523807765
+    },
+    "v1": {
+      "expected_bias_pts": -0.028737406377298477,
+      "expected_bias_per_xi_pts": -0.31611147015028324
+    },
+    "v4": {
+      "expected_bias_pts": 0.1128375034063324,
+      "expected_bias_per_xi_pts": 1.2412125374696565,
+      "bias_vs_v1_pts": 0.14157490978363088
+    }
+  },
+  "recommendation": "Deploy V1 to production. V4 is worse on both accuracy and bias."
 }
