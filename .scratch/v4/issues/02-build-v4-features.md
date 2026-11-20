@@ -10,13 +10,13 @@ Given the enriched parquet with starts labels, build rolling features for v4 mod
 
 **Blocked by:** None
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] Double-gameweek fixtures aggregated to gw level before rolling features
-- [ ] Rolling features computed at fixture level: last 3/5/10 gw for minutes, points, starts
-- [ ] Pre-GW16 and pre-2022-23 fixtures included in rolling window but marked for exclusion from training labels
-- [ ] Feature completeness: opponent, home/away, gw, rolling means, start frequency, position all present
-- [ ] No data leakage: all rolling features use only pre-deadline information
-- [ ] Feature parquet output includes starts column (for labeling) and feature matrix
-- [ ] Row counts: all rows from enriched parquet preserved
-- [ ] Spot checks: verify rolling averages computed correctly on sample players across gw boundaries
+- [X] Double-gameweek fixtures aggregated to gw level before rolling features
+- [X] Rolling features computed at fixture level: last 3/5/10 gw for minutes, points, starts
+- [X] Pre-GW16 and pre-2022-23 fixtures included in rolling window but marked for exclusion from training labels
+- [X] Feature completeness: opponent, home/away, gw, rolling means, start frequency, position all present
+- [X] No data leakage: all rolling features use only pre-deadline information
+- [X] Feature parquet output includes starts column (for labeling) and feature matrix
+- [X] Row counts: all rows from enriched parquet preserved
+- [X] Spot checks: verify rolling averages computed correctly on sample players across gw boundaries

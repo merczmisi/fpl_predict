@@ -4,7 +4,7 @@
 
 Given three trained models and v4 features, implement fixture-level and gameweek-level prediction. For each (player, fixture), compute E[pts] = P(start) × E[pts | starts] + (1 − P(start)) × E[pts | ¬starts]. Support external start probabilities (e.g., from news/team data) to override the classifier. Aggregate fixture predictions to gw level for output. Produce XI-ready forecasts for downstream use (draft selection, captaincy analysis).
 
-**Blocked by:** 03: Train three independent LightGBM models
+**Blocked by:** 03: None
 
 **Status:** ready-for-agent
 

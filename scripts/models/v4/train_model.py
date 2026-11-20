@@ -38,9 +38,16 @@ TRAIN_START_GW = 16  # Only 2022-23 GW16+
 VAL_SEASONS = ["2024-25"]
 TEST_SEASONS = ["2025-26"]
 
-PRECISION_CUTOFFS = (1, 3, 5, 10, 20)
-NDCG_CUTOFFS = (5, 10, 20)
-TOP_PICK_CUTOFFS = (5, 11)
+# LightGBM hyperparameters (baseline from v1)
+LIGHTGBM_PARAMS = {
+    "n_estimators": 2000,
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "min_child_samples": 30,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "random_state": 42,
+}
 
 
 def load_splits():
@@ -91,14 +98,8 @@ def load_splits():
 def train_classifier(train, val, feature_cols):
     """Train binary starts classifier on all rows with known starts."""
     model = lgb.LGBMClassifier(
+        **LIGHTGBM_PARAMS,
         objective="binary",
-        n_estimators=2000,
-        learning_rate=0.03,
-        num_leaves=31,
-        min_child_samples=30,
-        subsample=0.8,
-        colsample_bytree=0.8,
-        random_state=42,
         is_unbalance=True,
     )
 
@@ -117,27 +118,21 @@ def train_classifier(train, val, feature_cols):
     return model
 
 
-def train_regression(train, val, feature_cols, subset_key, subset_value):
+def train_regression(train, val, feature_cols, starts_label, label_value):
     """Train regression model on subset of rows.
 
-    subset_key: "starts" column name
-    subset_value: value to filter on (1 for starters, 0 for non-starters)
+    starts_label: "starts" column name
+    label_value: value to filter on (1 for starters, 0 for non-starters)
     """
-    train_subset = train[train[subset_key] == subset_value]
-    val_subset = val[val[subset_key] == subset_value]
+    train_subset = train[train[starts_label] == label_value]
+    val_subset = val[val[starts_label] == label_value]
 
     if len(train_subset) < 10:
-        print(f"Warning: only {len(train_subset)} training samples for {subset_key}={subset_value}")
+        print(f"Warning: only {len(train_subset)} training samples for {starts_label}={label_value}")
 
     model = lgb.LGBMRegressor(
+        **LIGHTGBM_PARAMS,
         objective="regression",
-        n_estimators=2000,
-        learning_rate=0.03,
-        num_leaves=31,
-        min_child_samples=30,
-        subsample=0.8,
-        colsample_bytree=0.8,
-        random_state=42,
     )
 
     model.fit(
@@ -155,39 +150,43 @@ def train_regression(train, val, feature_cols, subset_key, subset_value):
     return model
 
 
-def ranking_metrics(df, y_true_col, y_pred_col):
-    """Return mean per-gameweek rank metrics."""
+def compute_per_gw_metrics(df, actual_col, predicted_col):
+    """Return mean per-gameweek rank metrics (Spearman, precision, NDCG, top-k)."""
+    precision_cutoffs = (1, 3, 5, 10, 20)
+    ndcg_cutoffs = (5, 10, 20)
+    top_pick_cutoffs = (5, 11)
+
     spearmans = []
-    precisions = {k: [] for k in PRECISION_CUTOFFS}
-    ndcgs = {k: [] for k in NDCG_CUTOFFS}
-    top_pick_points = {k: [] for k in TOP_PICK_CUTOFFS}
+    precisions = {k: [] for k in precision_cutoffs}
+    ndcgs = {k: [] for k in ndcg_cutoffs}
+    top_pick_points = {k: [] for k in top_pick_cutoffs}
 
     for _, group in df.groupby(["season", "gw"]):
         if group.empty:
             continue
 
-        if len(group) >= 2 and group[y_true_col].nunique() >= 2:
-            corr, _ = spearmanr(group[y_true_col], group[y_pred_col])
+        if len(group) >= 2 and group[actual_col].nunique() >= 2:
+            corr, _ = spearmanr(group[actual_col], group[predicted_col])
             if not np.isnan(corr):
                 spearmans.append(corr)
 
         for k in precisions:
             cutoff = min(k, len(group))
-            true_top = set(group.nlargest(cutoff, y_true_col)["player_id"])
-            pred_top = set(group.nlargest(cutoff, y_pred_col)["player_id"])
+            true_top = set(group.nlargest(cutoff, actual_col)["player_id"])
+            pred_top = set(group.nlargest(cutoff, predicted_col)["player_id"])
             overlap = len(true_top & pred_top)
             precisions[k].append(overlap / cutoff if cutoff > 0 else 0)
 
         for k in ndcgs:
             cutoff = min(k, len(group))
-            pred_order = group.nlargest(cutoff, y_pred_col).index
-            gains = (group.loc[pred_order, y_true_col].clip(lower=0).values
+            pred_order = group.nlargest(cutoff, predicted_col).index
+            gains = (group.loc[pred_order, actual_col].clip(lower=0).values
                      / np.log2(np.arange(2, cutoff + 2)))
             ndcgs[k].append(gains.sum())
 
-        for k in TOP_PICK_CUTOFFS:
+        for k in top_pick_cutoffs:
             cutoff = min(k, len(group))
-            top_pred = group.nlargest(cutoff, y_pred_col)
+            top_pred = group.nlargest(cutoff, predicted_col)
             top_pick_points[k].append(top_pred["total_points"].mean())
 
     result = {
@@ -200,7 +199,7 @@ def ranking_metrics(df, y_true_col, y_pred_col):
     for k in ndcgs:
         result[f"ndcg@{k}"] = np.mean(ndcgs[k]) if ndcgs[k] else np.nan
 
-    for k in TOP_PICK_CUTOFFS:
+    for k in top_pick_cutoffs:
         result[f"top{k}_mean_points"] = (
             np.mean(top_pick_points[k]) if top_pick_points[k] else np.nan
         )
@@ -248,13 +247,13 @@ def evaluate_regression(model, test, feature_cols, model_name):
     mae = mean_absolute_error(test["total_points"], preds)
     rmse = np.sqrt(mean_squared_error(test["total_points"], preds))
 
-    rank_metrics = ranking_metrics(test_copy, "total_points", "predicted_points")
+    rank_metrics = compute_per_gw_metrics(test_copy, "total_points", "predicted_points")
 
     print(f"\n{model_name} Metrics (Test 2025-26):")
     print(f"  MAE: {mae:.4f}")
     print(f"  RMSE: {rmse:.4f}")
     print(f"  Spearman: {rank_metrics.get('spearman', np.nan):.4f}")
-    for k in PRECISION_CUTOFFS:
+    for k in (1, 3, 5, 10, 20):
         print(f"  Precision@{k}: {rank_metrics.get(f'precision@{k}', np.nan):.4f}")
 
     return {"mae": mae, "rmse": rmse, "rank_metrics": rank_metrics}
