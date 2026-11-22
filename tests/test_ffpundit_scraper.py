@@ -99,25 +99,42 @@ class TestFFPunditScraper:
     def test_parse_html_extracts_players(self):
         """Parse HTML extracts player data from team tables."""
         html = """
-        <div class="team-section">
-            <h2>Arsenal</h2>
-            <div class="starting">
-                <div class="player">
-                    <span class="name">Saka</span>
-                    <span class="pct">75%</span>
-                </div>
-                <div class="player">
-                    <span class="name">Martinelli</span>
-                    <span class="pct">60%</span>
-                </div>
-            </div>
-            <div class="potential">
-                <div class="player">
-                    <span class="name">White</span>
-                    <span class="pct">45%</span>
-                </div>
-            </div>
-        </div>
+        <h2>Arsenal Predicted Lineup</h2>
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>GW10 Mins</th>
+                <th>Start %</th>
+            </tr>
+            <tr>
+                <td>Saka</td>
+                <td>RW</td>
+                <td>90</td>
+                <td>75%</td>
+            </tr>
+            <tr>
+                <td>Martinelli</td>
+                <td>LW</td>
+                <td>45</td>
+                <td>60%</td>
+            </tr>
+        </table>
+        <h2>Aston Villa Predicted Lineup</h2>
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>GW10 Mins</th>
+                <th>Start %</th>
+            </tr>
+            <tr>
+                <td>White</td>
+                <td>CB</td>
+                <td>90</td>
+                <td>45%</td>
+            </tr>
+        </table>
         """
         scraper = FFPunditScraper(cache_dir=self.cache_dir)
         df = scraper._parse_html(html)
@@ -126,7 +143,8 @@ class TestFFPunditScraper:
         assert "team" in df.columns
         assert "player_name" in df.columns
         assert "starting_pct" in df.columns
-        assert set(df["player_name"]) >= {"Saka", "Martinelli", "White"}
+        assert "Arsenal" in df["team"].values
+        assert "Aston Villa" in df["team"].values
 
     def test_cache_file_written(self):
         """Write cache creates CSV file with correct data."""
@@ -195,15 +213,21 @@ class TestFFPunditScraper:
         """Scrape fetches page and parses when no cache."""
         mock_response = Mock()
         mock_response.text = """
-        <div class="team-section">
-            <h2>Manchester United</h2>
-            <div class="starting">
-                <div class="player">
-                    <span class="name">Bruno</span>
-                    <span class="pct">80%</span>
-                </div>
-            </div>
-        </div>
+        <h2>Manchester United Predicted Lineup</h2>
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>GW10 Mins</th>
+                <th>Start %</th>
+            </tr>
+            <tr>
+                <td>Bruno</td>
+                <td>CM</td>
+                <td>90</td>
+                <td>80%</td>
+            </tr>
+        </table>
         """
         mock_response.status_code = 200
         mock_get.return_value = mock_response

@@ -87,48 +87,51 @@ class FFPunditScraper:
         rows = []
         now = datetime.now()
 
-        # Look for team sections marked by h2 headings
+        # Look for team headings (e.g., "Arsenal Predicted Lineup")
         team_headings = soup.find_all('h2')
 
-        for team_heading in team_headings:
-            team_name = team_heading.get_text(strip=True)
-            if not team_name:
+        for h2 in team_headings:
+            heading_text = h2.get_text(strip=True)
+            
+            # Extract team name from heading like "Arsenal Predicted Lineup"
+            if 'Predicted Lineup' not in heading_text:
+                continue
+            
+            team_name = heading_text.replace('Predicted Lineup', '').strip()
+            
+            # Find next table after this heading
+            table = h2.find_next('table')
+            if not table:
                 continue
 
-            # Find divs with "starting" or "potential" classes after this heading
-            parent = team_heading.parent or team_heading
-            
-            for div in parent.find_all('div'):
-                # Check both class attribute and text content
-                div_classes = div.get('class', [])
-                div_text = div.get_text().lower()
-                
-                has_starting = ('starting' in div_classes or 'potential' in div_classes or
-                               'starting' in div_text or 'potential' in div_text)
-                
-                if not has_starting:
+            # Parse table rows (skip header)
+            table_rows = table.find_all('tr')
+            for row in table_rows[1:]:  # Skip header row
+                cells = row.find_all(['td', 'th'])
+                if len(cells) < 4:
                     continue
 
-                # Extract player rows within this section
-                for player_div in div.find_all('div', class_='player'):
-                    # Find name and percentage in spans
-                    name_span = player_div.find('span', class_='name')
-                    pct_span = player_div.find('span', class_='pct')
+                # Columns: Player, Pos, GW10 Mins, Start %
+                # Extract player name from first cell (may contain additional markup)
+                player_cell = cells[0].get_text(strip=True)
+                # Player name may be duplicated or have extra text; take first word(s)
+                player_name = player_cell.split('\n')[0].strip()
+                # Remove doubt/injury status markers if present
+                for suffix in ['Doubt', 'Injury', 'Suspended']:
+                    if suffix in player_name:
+                        player_name = player_name.replace(suffix, '').strip()
+                
+                # Start % is in the 4th column (index 3)
+                pct_text = cells[3].get_text(strip=True)
+                pct = parse_starting_percentage(pct_text)
 
-                    if not name_span or not pct_span:
-                        continue
-
-                    name = name_span.get_text(strip=True)
-                    pct_text = pct_span.get_text(strip=True)
-                    pct = parse_starting_percentage(pct_text)
-
-                    if name and pct is not None:
-                        rows.append({
-                            "team": team_name,
-                            "player_name": name,
-                            "starting_pct": pct,
-                            "scraped_at": now
-                        })
+                if player_name and pct is not None:
+                    rows.append({
+                        "team": team_name,
+                        "player_name": player_name,
+                        "starting_pct": pct,
+                        "scraped_at": now
+                    })
 
         df = pd.DataFrame(rows)
         
