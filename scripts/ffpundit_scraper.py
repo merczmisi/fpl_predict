@@ -99,39 +99,59 @@ class FFPunditScraper:
             
             team_name = heading_text.replace('Predicted Lineup', '').strip()
             
-            # Find next table after this heading
-            table = h2.find_next('table')
-            if not table:
-                continue
-
-            # Parse table rows (skip header)
-            table_rows = table.find_all('tr')
-            for row in table_rows[1:]:  # Skip header row
-                cells = row.find_all(['td', 'th'])
-                if len(cells) < 4:
-                    continue
-
-                # Columns: Player, Pos, GW10 Mins, Start %
-                # Extract player name from first cell (may contain additional markup)
-                player_cell = cells[0].get_text(strip=True)
-                # Player name may be duplicated or have extra text; take first word(s)
-                player_name = player_cell.split('\n')[0].strip()
-                # Remove doubt/injury status markers if present
-                for suffix in ['Doubt', 'Injury', 'Suspended']:
-                    if suffix in player_name:
-                        player_name = player_name.replace(suffix, '').strip()
+            # Find all tables for this team (Starting 11 + Potential Starters)
+            # We need to get the next 2 tables but stop if we hit another h2
+            current = h2
+            tables_for_team = []
+            
+            for _ in range(2):  # Up to 2 tables per team
+                table = current.find_next('table')
+                if not table:
+                    break
                 
-                # Start % is in the 4th column (index 3)
-                pct_text = cells[3].get_text(strip=True)
-                pct = parse_starting_percentage(pct_text)
+                # Check if we've crossed into next team (found another h2)
+                next_h2 = table.find_next('h2')
+                prev_h2 = table.find_previous('h2')
+                if next_h2 and next_h2 != h2 and prev_h2 == h2:
+                    # This table belongs to this team
+                    tables_for_team.append(table)
+                elif not next_h2:
+                    # Last team, include this table
+                    tables_for_team.append(table)
+                else:
+                    break
+                
+                current = table
 
-                if player_name and pct is not None:
-                    rows.append({
-                        "team": team_name,
-                        "player_name": player_name,
-                        "starting_pct": pct,
-                        "scraped_at": now
-                    })
+            # Parse all tables for this team
+            for table in tables_for_team:
+                table_rows = table.find_all('tr')
+                for row in table_rows[1:]:  # Skip header row
+                    cells = row.find_all(['td', 'th'])
+                    if len(cells) < 4:
+                        continue
+
+                    # Columns: Player, Pos, GW10 Mins, Start %
+                    # Extract player name from first cell (may contain additional markup)
+                    player_cell = cells[0].get_text(strip=True)
+                    # Player name may be duplicated or have extra text; take first word(s)
+                    player_name = player_cell.split('\n')[0].strip()
+                    # Remove doubt/injury status markers if present
+                    for suffix in ['Doubt', 'Injury', 'Suspended']:
+                        if suffix in player_name:
+                            player_name = player_name.replace(suffix, '').strip()
+                    
+                    # Start % is in the 4th column (index 3)
+                    pct_text = cells[3].get_text(strip=True)
+                    pct = parse_starting_percentage(pct_text)
+
+                    if player_name and pct is not None:
+                        rows.append({
+                            "team": team_name,
+                            "player_name": player_name,
+                            "starting_pct": pct,
+                            "scraped_at": now
+                        })
 
         df = pd.DataFrame(rows)
         

@@ -97,7 +97,7 @@ class TestFFPunditScraper:
         assert len(df) == 0
 
     def test_parse_html_extracts_players(self):
-        """Parse HTML extracts player data from team tables."""
+        """Parse HTML extracts player data from both Starting 11 and Potential Starters."""
         html = """
         <h2>Arsenal Predicted Lineup</h2>
         <table>
@@ -112,6 +112,14 @@ class TestFFPunditScraper:
                 <td>RW</td>
                 <td>90</td>
                 <td>75%</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>GW10 Mins</th>
+                <th>Start %</th>
             </tr>
             <tr>
                 <td>Martinelli</td>
@@ -135,11 +143,25 @@ class TestFFPunditScraper:
                 <td>45%</td>
             </tr>
         </table>
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>GW10 Mins</th>
+                <th>Start %</th>
+            </tr>
+            <tr>
+                <td>Torres</td>
+                <td>ST</td>
+                <td>0</td>
+                <td>35%</td>
+            </tr>
+        </table>
         """
         scraper = FFPunditScraper(cache_dir=self.cache_dir)
         df = scraper._parse_html(html)
 
-        assert len(df) >= 3
+        assert len(df) >= 4  # 2 tables x 2 teams
         assert "team" in df.columns
         assert "player_name" in df.columns
         assert "starting_pct" in df.columns
