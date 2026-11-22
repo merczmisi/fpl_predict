@@ -132,14 +132,20 @@ class FFPunditScraper:
                         continue
 
                     # Columns: Player, Pos, GW10 Mins, Start %
-                    # Extract player name from first cell (may contain additional markup)
-                    player_cell = cells[0].get_text(strip=True)
-                    # Player name may be duplicated or have extra text; take first word(s)
-                    player_name = player_cell.split('\n')[0].strip()
-                    # Remove doubt/injury status markers if present
-                    for suffix in ['Doubt', 'Injury', 'Suspended']:
-                        if suffix in player_name:
-                            player_name = player_name.replace(suffix, '').strip()
+                    player_cell = cells[0]
+                    
+                    # Try to extract from span with nameFull class (clean name)
+                    name_span = player_cell.find('span', class_=lambda x: x and 'nameFull' in x if x else False)
+                    if name_span:
+                        player_name = name_span.get_text(strip=True)
+                    else:
+                        # Fallback: use first text before any special characters
+                        player_text = player_cell.get_text(strip=True)
+                        # Remove status markers
+                        for suffix in ['Doubt', 'Injury', 'Suspended']:
+                            if suffix in player_text:
+                                player_text = player_text.replace(suffix, '').strip()
+                        player_name = player_text.split('\n')[0].strip()
                     
                     # Start % is in the 4th column (index 3)
                     pct_text = cells[3].get_text(strip=True)
