@@ -88,7 +88,8 @@ def predict_fixture_level(
     
     Returns:
         DataFrame with columns (player_id, season, gw, ..., predicted_points,
-                               predicted_start_prob, confidence)
+                               predicted_start_prob, start_prob_source, confidence).
+        start_prob_source is "external" or "classifier".
     """
     classifier, starter_model, nonstarter_model = load_v4_models()
     
@@ -110,6 +111,7 @@ def predict_fixture_level(
     X_array = X.values.astype(np.float32)
     start_probs = classifier.predict(X_array)
     result["predicted_start_prob"] = start_probs
+    result["start_prob_source"] = "classifier"
     
     # Override with external probs where available
     if external_start_probs is not None:
@@ -121,9 +123,11 @@ def predict_fixture_level(
         )
         # Use external prob where available, else keep classifier output
         external_available = merged["external_start_prob"].notna()
-        result.loc[external_available.values, "predicted_start_prob"] = (
-            merged.loc[external_available.values, "external_start_prob"].values
+        external_indices = merged.index[external_available]
+        result.loc[external_indices, "predicted_start_prob"] = (
+            merged.loc[external_indices, "external_start_prob"].values
         )
+        result.loc[external_indices, "start_prob_source"] = "external"
     
     # Predict E[points | starts=1]
     X_array = X.values.astype(np.float32)
@@ -149,6 +153,7 @@ def predict_fixture_level(
     output_cols = ID_COLS + [
         "predicted_points",
         "predicted_start_prob",
+        "start_prob_source",
         "confidence"
     ]
     result = result[output_cols]

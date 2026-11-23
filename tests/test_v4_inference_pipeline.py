@@ -304,6 +304,39 @@ def test_mismatched_external_probs(sample_fixture_data):
     assert all((result["predicted_start_prob"] >= 0) & (result["predicted_start_prob"] <= 1))
 
 
+def test_start_prob_source_column_exists(sample_fixture_data, sample_external_start_probs):
+    """Output includes start_prob_source column tracking classifier vs external."""
+    result = predict_fixture_level(sample_fixture_data, external_start_probs=sample_external_start_probs)
+    
+    assert "start_prob_source" in result.columns
+    assert all(result["start_prob_source"].isin(["classifier", "external"]))
+
+
+def test_start_prob_source_values(sample_fixture_data, sample_external_start_probs):
+    """Rows with external probs marked 'external', others marked 'classifier'."""
+    result = predict_fixture_level(sample_fixture_data, external_start_probs=sample_external_start_probs)
+    
+    # All 4 rows in sample have matching external probs
+    assert all(result["start_prob_source"] == "external")
+
+
+def test_start_prob_source_fallback(sample_fixture_data):
+    """Rows with no external probs fall back to classifier source."""
+    partial_external_probs = pd.DataFrame({
+        "player_id": [1],
+        "season": ["2025-26"],
+        "gw": [1],
+        "external_start_prob": [0.95],
+    })
+    
+    result = predict_fixture_level(sample_fixture_data, external_start_probs=partial_external_probs)
+    
+    # Row 0 (player 1, gw 1) should be "external"
+    assert result.iloc[0]["start_prob_source"] == "external"
+    # Other rows should be "classifier"
+    assert all(result.iloc[1:]["start_prob_source"] == "classifier")
+
+
 def test_performance_full_dataset():
     """Full dataset inference completes in acceptable time (<5 seconds for 1000 rows)."""
     # Create a dataset with 1000 fixture predictions (realistic batch size)
