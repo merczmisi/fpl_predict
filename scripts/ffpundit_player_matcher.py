@@ -129,7 +129,7 @@ def match_player_names(
             continue
         
         # Try fuzzy match: find best token overlap
-        # Split names into tokens and score by common tokens
+        # Score bidirectionally: how many tokens match from either side
         ffpundit_tokens = _tokenize_name(normalized_ffpundit)
         best_score = -1
         best_match = None
@@ -139,9 +139,11 @@ def match_player_names(
             if not ffpundit_tokens or not candidate_tokens:
                 continue
             
-            # Score: how many FFPundit tokens appear in candidate tokens
-            matches = len(ffpundit_tokens & candidate_tokens)
-            score = matches / len(ffpundit_tokens) if ffpundit_tokens else 0
+            # Score: common tokens / min(ffpundit_tokens, candidate_tokens)
+            # This handles both "silva" vs "silva joão silva" and vice versa
+            common = len(ffpundit_tokens & candidate_tokens)
+            denom = min(len(ffpundit_tokens), len(candidate_tokens))
+            score = common / denom if denom > 0 else 0
             
             if score > best_score:
                 best_score = score

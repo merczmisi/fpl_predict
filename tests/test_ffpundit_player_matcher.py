@@ -254,7 +254,7 @@ class TestMainCLI:
         assert "player_id" in result.columns
         assert "season" in result.columns
         assert "gw" in result.columns
-        # Expect high match rate
+        # Expect very high match rate (100% on 2026-27 data)
         matched = result[result["match_type"] != "skipped"]
         skip_rate = len(result[result["match_type"] == "skipped"]) / len(result)
-        assert skip_rate < 0.05, f"Skip rate {skip_rate:.1%} exceeds 5% threshold"
+        assert skip_rate < 0.01, f"Skip rate {skip_rate:.1%} exceeds 1% threshold"
