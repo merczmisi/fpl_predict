@@ -254,6 +254,25 @@ def test_dgw_aggregation(sample_fixture_data):
     assert np.isclose(player1_gw1["predicted_points"].values[0], expected_points)
 
 
+def test_gameweek_aggregation_preserves_start_prob_source(sample_fixture_data):
+    """start_prob_source column preserved during gameweek aggregation."""
+    fixture_preds = predict_fixture_level(sample_fixture_data, external_start_probs=None)
+    gw_preds = predict_gameweek_level(fixture_preds)
+    
+    assert "start_prob_source" in gw_preds.columns
+    assert all(gw_preds["start_prob_source"].isin(["classifier", "external"]))
+    # For single-fixture GW, source should match fixture source
+    assert len(gw_preds) == len(sample_fixture_data)  # No collapsing (single fixture per gw)
+    for idx, row in gw_preds.iterrows():
+        fixture_row = fixture_preds[
+            (fixture_preds["player_id"] == row["player_id"]) &
+            (fixture_preds["season"] == row["season"]) &
+            (fixture_preds["gw"] == row["gw"])
+        ]
+        # For single fixture, source should be unchanged
+        assert row["start_prob_source"] == fixture_row["start_prob_source"].iloc[0]
+
+
 def test_output_format(sample_fixture_data):
     """Output has required columns: player, gameweek, predicted_points, confidence."""
     fixture_preds = predict_fixture_level(sample_fixture_data, external_start_probs=None)

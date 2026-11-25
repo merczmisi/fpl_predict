@@ -170,7 +170,9 @@ def predict_gameweek_level(fixture_preds: pd.DataFrame) -> pd.DataFrame:
         fixture_preds: Output from predict_fixture_level.
     
     Returns:
-        DataFrame with one row per (player_id, season, gw).
+        DataFrame with one row per (player_id, season, gw). Includes all fixture-level
+        columns: predicted_points (sum), predicted_start_prob (mean), start_prob_source
+        (first), confidence (mean).
     """
     # Group by (player_id, season, gw) and sum predicted_points
     # For other columns, take mean (start_prob) or weighted mean (confidence)
@@ -178,6 +180,7 @@ def predict_gameweek_level(fixture_preds: pd.DataFrame) -> pd.DataFrame:
     agg_dict = {
         "predicted_points": "sum",  # Sum fixture predictions
         "predicted_start_prob": "mean",  # Average start prob across fixtures
+        "start_prob_source": "first",  # Source of probability (consistent within DGW)
         "confidence": "mean",  # Average confidence across fixtures
         "team_id": "first",  # Same team for both DGW fixtures
         "team_code": "first",
