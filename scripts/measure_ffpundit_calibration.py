@@ -1,5 +1,6 @@
 """Measure FFPundit forecast calibration: Brier score and ECE per gameweek."""
 
+import json
 import logging
 import sys
 from pathlib import Path
@@ -16,25 +17,6 @@ if not logger.handlers:
     logger.setLevel(logging.INFO)
 
 
-def _build_element_to_code_map(players_csv: str) -> dict:
-    """Build mapping from FPL element_id to player code (used in player_gameweeks).
-    
-    Args:
-        players_csv: Path to players.csv (has id and code columns)
-        
-    Returns:
-        Dict mapping element_id (players.id) to player code (players.code)
-    """
-    df = pd.read_csv(players_csv)
-    return dict(zip(df['id'], df['code']))
-
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
-    logger.addHandler(handler)
-    logger.setLevel(logging.INFO)
-
-
 def load_matched_forecasts(csv_path: str) -> pd.DataFrame:
     """Load matched FFPundit forecasts CSV.
     
@@ -42,7 +24,7 @@ def load_matched_forecasts(csv_path: str) -> pd.DataFrame:
         csv_path: Path to matched forecasts CSV
         
     Returns:
-        DataFrame with columns: player_id, gw, ffpundit_start_pct, etc.
+        DataFrame with columns: player_id (element_id), gw, ffpundit_start_pct, etc.
         
     Raises:
         FileNotFoundError: If file does not exist
@@ -60,30 +42,51 @@ def load_matched_forecasts(csv_path: str) -> pd.DataFrame:
     return df
 
 
-def load_actual_starts(parquet_path: str, season: str, gameweeks: list[int]) -> pd.DataFrame:
-    """Load actual start labels from player_gameweeks.parquet.
+def load_actual_starts(raw_data_dir: str, season: str, gameweeks: list[int]) -> pd.DataFrame:
+    """Load actual start labels from raw gw_N.json files.
     
     Args:
-        parquet_path: Path to player_gameweeks.parquet
+        raw_data_dir: Path to raw season directory (e.g., data/raw/2026-27)
         season: Season string (e.g., "2026-27")
         gameweeks: List of gameweek numbers to load
         
     Returns:
-        DataFrame with columns: player_id, gw, started (1 if minutes > 0, else 0)
+        DataFrame with columns: player_id (element_id), gw, started (1=started, 0=bench/subbed in)
     """
-    path = Path(parquet_path)
+    path = Path(raw_data_dir)
     if not path.exists():
-        raise FileNotFoundError(f"File not found: {parquet_path}")
+        raise FileNotFoundError(f"Directory not found: {raw_data_dir}")
     
-    df = pd.read_parquet(parquet_path)
+    records = []
     
-    # Filter to season and gameweeks
-    df = df[(df['season'] == season) & (df['gw'].isin(gameweeks))]
+    for gw in gameweeks:
+        gw_file = path / "players" / f"gw_{gw}.json"
+        if not gw_file.exists():
+            logger.warning(f"File not found: {gw_file}, skipping GW {gw}")
+            continue
+        
+        with open(gw_file) as f:
+            gw_data = json.load(f)
+        
+        if not isinstance(gw_data, list):
+            logger.error(f"Expected list in {gw_file}, got {type(gw_data)}")
+            continue
+        
+        for player_record in gw_data:
+            if "player_id" not in player_record or "starts" not in player_record:
+                logger.warning(f"Missing player_id or starts in record: {player_record}")
+                continue
+            
+            records.append({
+                'player_id': player_record['player_id'],
+                'gw': gw,
+                'started': player_record['starts'],
+            })
     
-    # Create start label: 1 if minutes > 0, else 0
-    df['started'] = (df['minutes'] > 0).astype(int)
+    if not records:
+        raise ValueError(f"No records loaded from {raw_data_dir} for GW {gameweeks}")
     
-    return df[['player_id', 'gw', 'started']].copy()
+    return pd.DataFrame(records)
 
 
 def compute_brier_score(predictions: np.ndarray, actuals: np.ndarray) -> float:
@@ -94,7 +97,7 @@ def compute_brier_score(predictions: np.ndarray, actuals: np.ndarray) -> float:
         actuals: Array of actual outcomes {0, 1}
         
     Returns:
-        Brier score (lower is better, range [0, 2])
+        Brier score (lower is better, range [0, 1])
     """
     if len(predictions) == 0:
         return np.nan
@@ -260,12 +263,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--actual-starts",
         required=True,
-        help="Path to player_gameweeks.parquet (for actual start labels)",
-    )
-    parser.add_argument(
-        "--players-csv",
-        required=True,
-        help="Path to players.csv (for element_id → code mapping)",
+        help="Path to raw season directory (e.g., data/raw/2026-27) containing gw_N.json files",
     )
     parser.add_argument(
         "--season",
@@ -296,15 +294,7 @@ if __name__ == "__main__":
     matched = load_matched_forecasts(args.matched_forecasts)
     logger.info(f"Loaded {len(matched)} forecasts")
     
-    # Map element_id (from matcher) to code (used in player_gameweeks)
-    logger.info(f"Building element_id → code mapping from {args.players_csv}")
-    element_to_code = _build_element_to_code_map(args.players_csv)
-    matched['player_id'] = matched['player_id'].map(element_to_code)
-    matched = matched.dropna(subset=['player_id'])
-    matched['player_id'] = matched['player_id'].astype(int)
-    logger.info(f"Mapped {len(matched)} forecasts to player codes")
-    
-    logger.info(f"Loading actual starts from {args.actual_starts} (season {args.season})")
+    logger.info(f"Loading actual starts from {args.actual_starts} (GW {gameweeks})")
     actual = load_actual_starts(args.actual_starts, args.season, gameweeks)
     logger.info(f"Loaded {len(actual)} player-GW records with start labels")
     

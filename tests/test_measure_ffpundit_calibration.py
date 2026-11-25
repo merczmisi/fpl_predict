@@ -87,6 +87,7 @@ class TestLoadMatchedForecasts:
             
             df = load_matched_forecasts(f.name)
             assert len(df) == 2
+            # player_id should be element_ids (1-667)
             assert list(df['player_id']) == [1, 2]
             assert list(df['gw']) == [11, 11]
             
