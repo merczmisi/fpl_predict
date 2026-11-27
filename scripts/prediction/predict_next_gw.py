@@ -205,12 +205,11 @@ def predict_players_with_ffpundit(
 ):
     """Predict with FFPundit integration (shadow mode).
     
-    Currently uses v1 inference path. When v4 features are available,
-    this will switch to v4 inference with/without external FFPundit probs.
+    Uses v1 inference for classifier baseline. Applies FFPundit start prob
+    to adjust prediction via expected value formula:
+    E[pts_ffpundit] = P(start_ffpundit) × E[pts|start] + (1−P(start_ffpundit)) × E[pts|¬start]
     
-    For shadow mode, adds v4_ffpundit_points and v4_classifier_points columns
-    alongside existing pred_total_points (which uses classifier only).
-    If FFPundit match missing, gracefully falls back to classifier output for that player.
+    If FFPundit match missing, gracefully falls back to classifier output.
     
     Args:
         player_ids: List of FPL player IDs (or None for all with fixtures in target_gw)
@@ -227,7 +226,7 @@ def predict_players_with_ffpundit(
     if target_gw is None:
         target_gw = detect_target_gw()
     
-    # Get classifier predictions (v1 inference for now, will be v4 later)
+    # Get classifier predictions (v1 inference)
     classifier_result = predict_players(player_ids=player_ids, target_gw=target_gw)
     
     # Rename classifier prediction column
@@ -236,32 +235,69 @@ def predict_players_with_ffpundit(
     
     # Try to load matched FFPundit forecasts for target_gw
     ffpundit_forecasts_path = Path(f"data/raw/ffpundit/gw{target_gw}_forecasts.csv")
-    matched_ffpundit = None
+    classifier_result["v4_ffpundit_points"] = classifier_result["v4_classifier_points"]
+    
+    if include_audit_cols:
+        classifier_result["v4_classifier_start_prob"] = 0.5
+        classifier_result["v4_ffpundit_start_prob"] = 0.5
+        classifier_result["start_prob_diff"] = 0.0
     
     if ffpundit_forecasts_path.exists():
         try:
-            matched_ffpundit = match_ffpundit_forecasts(
+            matched = match_ffpundit_forecasts(
                 ffpundit_csv=str(ffpundit_forecasts_path),
                 fpl_players_csv=str(PLAYERS_PATH),
                 season=CURRENT_SEASON,
                 gameweek=target_gw,
             )
-            logger.info(f"Loaded matched FFPundit forecasts for gw{target_gw}")
+            
+            if not matched.empty:
+                # Only use matched players (skip=0)
+                matched_valid = matched[matched["match_type"] != "skipped"].copy()
+                
+                if not matched_valid.empty:
+                    # Matcher returns "player_id" as FPL id (1, 2, 3...)
+                    # Prediction output has "player_id" as code (223094, etc.)
+                    # Need to map FPL id -> code
+                    players_df = pd.read_csv(PLAYERS_PATH, usecols=["id", "code"])
+                    id_to_code = dict(zip(players_df["id"], players_df["code"]))
+                    
+                    # Build mapping: code -> ffpundit_start_pct
+                    ffpundit_start_probs = {}
+                    for _, row in matched_valid.iterrows():
+                        fpl_id = row["player_id"]
+                        if fpl_id in id_to_code:
+                            code = id_to_code[fpl_id]
+                            ffpundit_start_probs[code] = row["ffpundit_start_pct"] / 100.0
+                    
+                    logger.info(f"Loaded {len(ffpundit_start_probs)} matched FFPundit forecasts for gw{target_gw}")
+                    
+                    # Apply FFPundit start prob to adjust predictions
+                    # Approximation: use FFPundit start prob with existing E[pts|start] and E[pts|¬start]
+                    # Estimate E[pts|start] ≈ pred_total_points / 0.5 (approx assuming 50% classifier prob)
+                    # Estimate E[pts|¬start] ≈ 0.2 × E[pts|start]
+                    
+                    for code, ffpundit_prob in ffpundit_start_probs.items():
+                        mask = classifier_result["player_id"] == code
+                        if mask.any():
+                            classifier_pred = classifier_result.loc[mask, "v4_classifier_points"].values[0]
+                            
+                            # Approximate E[pts|start] assuming classifier used ~50% start prob
+                            pts_start = classifier_pred / 0.6 if classifier_pred > 0 else classifier_pred
+                            pts_nonstart = 0.2 * pts_start
+                            
+                            # Recompute with FFPundit start prob
+                            ffpundit_pred = ffpundit_prob * pts_start + (1 - ffpundit_prob) * pts_nonstart
+                            
+                            classifier_result.loc[mask, "v4_ffpundit_points"] = ffpundit_pred
+                            
+                            if include_audit_cols:
+                                classifier_result.loc[mask, "v4_ffpundit_start_prob"] = ffpundit_prob
+                                classifier_result.loc[mask, "start_prob_diff"] = ffpundit_prob - 0.5
         except Exception as e:
             logger.warning(f"Failed to load/match FFPundit forecasts for gw{target_gw}: {e}")
-            matched_ffpundit = None
     else:
         logger.warning(f"FFPundit forecasts not found: {ffpundit_forecasts_path}")
-    
-    # For now, FFPundit predictions = classifier predictions (graceful fallback)
-    # TODO: When v4 features available, call v4 inference with external FFPundit start probs
-    classifier_result["v4_ffpundit_points"] = classifier_result["v4_classifier_points"]
-    
-    if include_audit_cols:
-        # Placeholder: FFPundit start prob not available until v4 features built
-        classifier_result["v4_classifier_start_prob"] = 0.5  # Placeholder
-        classifier_result["v4_ffpundit_start_prob"] = 0.5    # Placeholder
-        classifier_result["start_prob_diff"] = 0.0           # Placeholder
     
     # Build output columns
     output_cols = ["id", "player_id", "web_name", "position", "team_code", 
