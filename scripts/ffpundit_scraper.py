@@ -40,7 +40,7 @@ def get_current_gameweek() -> int:
     """
     # TODO: Implement actual gameweek detection from FPL API
     # Placeholder: return 1
-    return 1
+    return 12
 
 
 class FFPunditScraper:
