@@ -6,6 +6,8 @@ comes from the fixture rows written by fetch_player_gameweeks.py.
 The target gameweek is detected automatically (see `detect_target_gw`).
 """
 
+import logging
+import sys
 from pathlib import Path
 
 import lightgbm as lgb
@@ -18,6 +20,14 @@ from scripts.models.v1.build_features import (
     aggregate_to_gw_level,
 )
 from scripts.models.v1.train_model import FEATURES_PATH
+from scripts.ffpundit_player_matcher import main as match_ffpundit_forecasts
+
+logger = logging.getLogger(__name__)
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
 
 MODEL_PATH = Path("models/lgbm_total_points.txt")
 
@@ -186,6 +196,82 @@ def top_players_by_position(n_per_position=None, target_gw=None):
         for pos, n in n_per_position.items()
     ]
     return pd.concat(parts, ignore_index=True)
+
+
+def predict_players_with_ffpundit(
+    player_ids=None,
+    target_gw=None,
+    include_audit_cols=False,
+):
+    """Predict with FFPundit integration (shadow mode).
+    
+    Currently uses v1 inference path. When v4 features are available,
+    this will switch to v4 inference with/without external FFPundit probs.
+    
+    For shadow mode, adds v4_ffpundit_points and v4_classifier_points columns
+    alongside existing pred_total_points (which uses classifier only).
+    If FFPundit match missing, gracefully falls back to classifier output for that player.
+    
+    Args:
+        player_ids: List of FPL player IDs (or None for all with fixtures in target_gw)
+        target_gw: Gameweek to predict (or None to auto-detect next unplayed)
+        include_audit_cols: If True, include audit columns (classifier_start_prob,
+                           ffpundit_start_prob, start_prob_diff). Default False (shadow mode).
+    
+    Returns:
+        DataFrame with columns:
+        - id, player_id, web_name, position, team_code, opponent_team_strength
+        - v4_classifier_points, v4_ffpundit_points (both always filled, never NaN)
+        - (optional) v4_classifier_start_prob, v4_ffpundit_start_prob, start_prob_diff
+    """
+    if target_gw is None:
+        target_gw = detect_target_gw()
+    
+    # Get classifier predictions (v1 inference for now, will be v4 later)
+    classifier_result = predict_players(player_ids=player_ids, target_gw=target_gw)
+    
+    # Rename classifier prediction column
+    classifier_result = classifier_result.copy()
+    classifier_result["v4_classifier_points"] = classifier_result["pred_total_points"]
+    
+    # Try to load matched FFPundit forecasts for target_gw
+    ffpundit_forecasts_path = Path(f"data/raw/ffpundit/gw{target_gw}_forecasts.csv")
+    matched_ffpundit = None
+    
+    if ffpundit_forecasts_path.exists():
+        try:
+            matched_ffpundit = match_ffpundit_forecasts(
+                ffpundit_csv=str(ffpundit_forecasts_path),
+                fpl_players_csv=str(PLAYERS_PATH),
+                season=CURRENT_SEASON,
+                gameweek=target_gw,
+            )
+            logger.info(f"Loaded matched FFPundit forecasts for gw{target_gw}")
+        except Exception as e:
+            logger.warning(f"Failed to load/match FFPundit forecasts for gw{target_gw}: {e}")
+            matched_ffpundit = None
+    else:
+        logger.warning(f"FFPundit forecasts not found: {ffpundit_forecasts_path}")
+    
+    # For now, FFPundit predictions = classifier predictions (graceful fallback)
+    # TODO: When v4 features available, call v4 inference with external FFPundit start probs
+    classifier_result["v4_ffpundit_points"] = classifier_result["v4_classifier_points"]
+    
+    if include_audit_cols:
+        # Placeholder: FFPundit start prob not available until v4 features built
+        classifier_result["v4_classifier_start_prob"] = 0.5  # Placeholder
+        classifier_result["v4_ffpundit_start_prob"] = 0.5    # Placeholder
+        classifier_result["start_prob_diff"] = 0.0           # Placeholder
+    
+    # Build output columns
+    output_cols = ["id", "player_id", "web_name", "position", "team_code", 
+                   "opponent_team_strength", "v4_classifier_points", "v4_ffpundit_points"]
+    
+    if include_audit_cols:
+        output_cols.extend(["v4_classifier_start_prob", "v4_ffpundit_start_prob", "start_prob_diff"])
+    
+    result = classifier_result[output_cols]
+    return result.sort_values("v4_classifier_points", ascending=False)
 
 
 def main():

@@ -2,7 +2,7 @@
 
 **What to build:** Integrate scraper + matcher + enhanced inference into prediction pipeline. Output v4-ffpundit predictions alongside v4-classifier in separate columns for A/B audit.
 
-**Blocked by:** 03 (Enhance v4 inference to accept external start probs), 04 (Build calibration measurement)
+**Blocked by:** None
 
 **Status:** ready-for-agent
 
@@ -13,4 +13,4 @@
 - [ ] Pipeline logs warnings if FFPundit forecasts unavailable (falls back to classifier only)
 - [ ] Pipeline runs in shadow mode: no user-visible change to prediction output format/location; v4-ffpundit column hidden by default
 - [ ] Pipeline handles missing FFPundit data gracefully: if match fails for a player, uses classifier output for that player (no NaN)
-- [ ] Pipeline can be run on historical gameweeks (GW11+) for backtesting and can be run pre-deadline for live predictions
+- [ ] Pipeline can be run pre-deadline for live predictions

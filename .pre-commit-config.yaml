@@ -8,5 +8,5 @@ repos:
         types: [python]
         stages: [commit]
         pass_filenames: false
-        always_run: false
+        always_run: true
 

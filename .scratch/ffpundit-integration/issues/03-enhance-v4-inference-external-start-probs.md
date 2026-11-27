@@ -4,13 +4,13 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** Done
 
-- [ ] `predict_fixture_level()` signature updated to accept optional external_start_probs DataFrame (columns: player_id, season, gw, external_start_prob)
-- [ ] Inference performs left join (fixture_data × external_start_probs) on (player_id, season, gw)
-- [ ] For matched rows, uses external_start_prob instead of classifier.predict_proba()
-- [ ] For unmatched rows, falls back to classifier output (no NaN)
-- [ ] Formula E[pts] = P(start) × E[pts|start] + (1−P(start)) × E[pts|¬start] computed identically regardless of P(start) source
-- [ ] Output columns include: (player_id, season, gw, ..., predicted_points, predicted_start_prob, start_prob_source: classifier|external)
-- [ ] Inference handles edge case: external_start_probs = None (infers from classifier only)
-- [ ] Existing tests for v4 inference (feature handling, formula correctness) pass unchanged
+- [X] `predict_fixture_level()` signature updated to accept optional external_start_probs DataFrame (columns: player_id, season, gw, external_start_prob)
+- [X] Inference performs left join (fixture_data × external_start_probs) on (player_id, season, gw)
+- [X] For matched rows, uses external_start_prob instead of classifier.predict_proba()
+- [X] For unmatched rows, falls back to classifier output (no NaN)
+- [X] Formula E[pts] = P(start) × E[pts|start] + (1−P(start)) × E[pts|¬start] computed identically regardless of P(start) source
+- [X] Output columns include: (player_id, season, gw, ..., predicted_points, predicted_start_prob, start_prob_source: classifier|external)
+- [X] Inference handles edge case: external_start_probs = None (infers from classifier only)
+- [X] Existing tests for v4 inference (feature handling, formula correctness) pass unchanged
